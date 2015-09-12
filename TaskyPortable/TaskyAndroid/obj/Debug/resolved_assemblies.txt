@@ -1,0 +1,7 @@
+C:\Codec\android\Xamarin\TaskyPortable\TaskyAndroid\obj\Debug\assemblies\TaskyAndroid.dll
+C:\Codec\android\Xamarin\TaskyPortable\TaskyAndroid\obj\Debug\assemblies\Mono.Android.dll
+C:\Codec\android\Xamarin\TaskyPortable\TaskyAndroid\obj\Debug\assemblies\mscorlib.dll
+C:\Codec\android\Xamarin\TaskyPortable\TaskyAndroid\obj\Debug\assemblies\System.Core.dll
+C:\Codec\android\Xamarin\TaskyPortable\TaskyAndroid\obj\Debug\assemblies\System.dll
+C:\Codec\android\Xamarin\TaskyPortable\TaskyAndroid\obj\Debug\assemblies\System.Xml.dll
+C:\Codec\android\Xamarin\TaskyPortable\TaskyAndroid\obj\Debug\assemblies\TaskyPortableLibrary.dll

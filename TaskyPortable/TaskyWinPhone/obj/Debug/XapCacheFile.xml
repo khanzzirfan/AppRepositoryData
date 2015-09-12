@@ -1,0 +1,15 @@
+﻿<xapCache source="C:\Codec\android\Xamarin\TaskyPortable\TaskyWinPhone\Bin\Debug\TaskyWinPhone_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="09-Sep-15 8:45:17 AM">
+  <file source="C:\Codec\android\Xamarin\TaskyPortable\TaskyWinPhone\obj\Debug\TaskyWinPhone.dll" archivePath="TaskyWinPhone.dll" lastWriteTime="09-Sep-15 8:45:17 AM" />
+  <file source="C:\Codec\android\Xamarin\TaskyPortable\TaskyWinPhone\Images\add.png" archivePath="Images\add.png" lastWriteTime="07-Sep-15 11:47:41 AM" />
+  <file source="C:\Codec\android\Xamarin\TaskyPortable\TaskyWinPhone\Images\delete.png" archivePath="Images\delete.png" lastWriteTime="07-Sep-15 11:47:41 AM" />
+  <file source="C:\Codec\android\Xamarin\TaskyPortable\TaskyWinPhone\Images\save.png" archivePath="Images\save.png" lastWriteTime="07-Sep-15 11:47:41 AM" />
+  <file source="C:\Codec\android\Xamarin\TaskyPortable\TaskyWinPhone\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="07-Sep-15 11:47:41 AM" />
+  <file source="C:\Codec\android\Xamarin\TaskyPortable\TaskyWinPhone\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="07-Sep-15 11:53:35 AM" />
+  <file source="C:\Codec\android\Xamarin\TaskyPortable\TaskyWinPhone\Bin\Debug\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="07-Sep-15 11:47:41 AM" />
+  <file source="C:\Codec\android\Xamarin\TaskyPortable\TaskyWinPhone\Bin\Debug\Background.png" archivePath="Background.png" lastWriteTime="07-Sep-15 11:47:41 AM" />
+  <file source="C:\Codec\android\Xamarin\TaskyPortable\Dependencies\Community.CsharpSqlite\Community.CsharpSqlite.WP7.dll" archivePath="Community.CsharpSqlite.WP7.dll" lastWriteTime="07-Sep-15 11:47:40 AM" />
+  <file source="C:\Codec\android\Xamarin\TaskyPortable\Dependencies\Microsoft.Phone.Controls.Toolkit\Microsoft.Phone.Controls.Toolkit.dll" archivePath="Microsoft.Phone.Controls.Toolkit.dll" lastWriteTime="07-Sep-15 11:47:40 AM" />
+  <file source="C:\Codec\android\Xamarin\TaskyPortable\TaskyPortableLibrary\bin\Debug\TaskyPortableLibrary.dll" archivePath="TaskyPortableLibrary.dll" lastWriteTime="09-Sep-15 8:45:16 AM" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\Libraries\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="01-Jan-13 6:57:00 PM" />
+  <file source="C:\Codec\android\Xamarin\TaskyPortable\TaskyWinPhone\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="07-Sep-15 11:53:36 AM" />
+</xapCache>

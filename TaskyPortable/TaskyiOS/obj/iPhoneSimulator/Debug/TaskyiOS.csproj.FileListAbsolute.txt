@@ -1,0 +1,8 @@
+C:\Codec\android\Xamarin\TaskyPortable\TaskyiOS\bin\iPhoneSimulator\Debug\Tasky.exe
+C:\Codec\android\Xamarin\TaskyPortable\TaskyiOS\bin\iPhoneSimulator\Debug\Tasky.pdb
+C:\Codec\android\Xamarin\TaskyPortable\TaskyiOS\bin\iPhoneSimulator\Debug\TaskyPortableLibrary.dll
+C:\Codec\android\Xamarin\TaskyPortable\TaskyiOS\bin\iPhoneSimulator\Debug\TaskyPortableLibrary.pdb
+C:\Codec\android\Xamarin\TaskyPortable\TaskyiOS\obj\iPhoneSimulator\Debug\
+C:\Codec\android\Xamarin\TaskyPortable\TaskyiOS\obj\iPhoneSimulator\Debug\TaskyiOS.csprojResolveAssemblyReference.cache
+C:\Codec\android\Xamarin\TaskyPortable\TaskyiOS\obj\iPhoneSimulator\Debug\Tasky.exe
+C:\Codec\android\Xamarin\TaskyPortable\TaskyiOS\obj\iPhoneSimulator\Debug\Tasky.pdb

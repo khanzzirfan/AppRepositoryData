@@ -1,0 +1,5 @@
+C:\Codec\android\Xamarin\TaskyPortable\AppProject\obj\Debug\AppProject.csprojResolveAssemblyReference.cache
+C:\Codec\android\Xamarin\TaskyPortable\AppProject\bin\Debug\AppProject.dll
+C:\Codec\android\Xamarin\TaskyPortable\AppProject\bin\Debug\AppProject.pdb
+C:\Codec\android\Xamarin\TaskyPortable\AppProject\obj\Debug\AppProject.dll
+C:\Codec\android\Xamarin\TaskyPortable\AppProject\obj\Debug\AppProject.pdb

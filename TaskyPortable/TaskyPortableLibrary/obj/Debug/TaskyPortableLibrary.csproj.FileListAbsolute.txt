@@ -1,0 +1,10 @@
+C:\Codec\android\TaskyPortable\TaskyPortableLibrary\bin\Debug\TaskyPortableLibrary.dll
+C:\Codec\android\TaskyPortable\TaskyPortableLibrary\bin\Debug\TaskyPortableLibrary.pdb
+C:\Codec\android\TaskyPortable\TaskyPortableLibrary\obj\Debug\TaskyPortableLibrary.csprojResolveAssemblyReference.cache
+C:\Codec\android\TaskyPortable\TaskyPortableLibrary\obj\Debug\TaskyPortableLibrary.dll
+C:\Codec\android\TaskyPortable\TaskyPortableLibrary\obj\Debug\TaskyPortableLibrary.pdb
+C:\Codec\android\Xamarin\TaskyPortable\TaskyPortableLibrary\bin\Debug\TaskyPortableLibrary.dll
+C:\Codec\android\Xamarin\TaskyPortable\TaskyPortableLibrary\bin\Debug\TaskyPortableLibrary.pdb
+C:\Codec\android\Xamarin\TaskyPortable\TaskyPortableLibrary\obj\Debug\TaskyPortableLibrary.dll
+C:\Codec\android\Xamarin\TaskyPortable\TaskyPortableLibrary\obj\Debug\TaskyPortableLibrary.pdb
+C:\Codec\android\Xamarin\TaskyPortable\TaskyPortableLibrary\obj\Debug\TaskyPortableLibrary.csprojResolveAssemblyReference.cache
