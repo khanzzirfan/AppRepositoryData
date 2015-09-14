@@ -1,4 +1,4 @@
-﻿namespace CoreRepository.BL.Contracts
+﻿namespace CoreRepository
 {
     public interface IBusinessEntity
     {

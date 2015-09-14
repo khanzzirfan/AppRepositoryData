@@ -1,10 +1,11 @@
 ﻿using System.Diagnostics;
 using System.Linq;
-using CoreRepository.BL;
 using System.Collections.Generic;
 using Tasky.DL.SQLiteBase;
+using System.Linq.Expressions;
+using System;
 
-namespace CoreRepository.DL
+namespace CoreRepository
 {
     /// <summary>
     /// TaskDatabase builds on SQLite.Net and represents a specific database, in our case, the Task DB.
@@ -32,9 +33,29 @@ namespace CoreRepository.DL
             database.CreateTable<BaseOrder>();
             database.CreateTable<Orders>();
             database.CreateTable<OrderDetails>();
+            SeedDatabase();
+
         }
 
-        public IEnumerable<T> GetItems<T>() where T : BL.Contracts.IBusinessEntity, new()
+        public void SeedDatabase()
+        {
+            //Only seeds the data in debug mode.
+            var seed = new SampleSeedDB();
+            var menuList = seed.MenuList;
+            if (database.Table<Menu>().Count() > 0)
+            {
+            }
+            if (database.Table<Menu>().Count() < 1)
+            {
+                foreach (var item in menuList)
+                {
+                    SaveItem(item);
+                }
+            }
+
+        }
+
+        public IEnumerable<T> GetItems<T>() where T : IBusinessEntity, new()
         {
             lock (locker)
             {
@@ -42,7 +63,7 @@ namespace CoreRepository.DL
             }
         }
 
-        public T GetItem<T>(int id) where T : BL.Contracts.IBusinessEntity, new()
+        public T GetItem<T>(int id) where T : IBusinessEntity, new()
         {
             lock (locker)
             {
@@ -54,7 +75,7 @@ namespace CoreRepository.DL
             }
         }
 
-        public int SaveItem<T>(T item) where T : BL.Contracts.IBusinessEntity
+        public int SaveItem<T>(T item) where T : IBusinessEntity
         {
             lock (locker)
             {
@@ -70,7 +91,7 @@ namespace CoreRepository.DL
             }
         }
 
-        public int DeleteItem<T>(int id) where T : BL.Contracts.IBusinessEntity, new()
+        public int DeleteItem<T>(int id) where T : IBusinessEntity, new()
         {
             lock (locker)
             {
@@ -78,7 +99,7 @@ namespace CoreRepository.DL
             }
         }
 
-        public int DeleteItem<T>(T item) where T : BL.Contracts.IBusinessEntity, new()
+        public int DeleteItem<T>(T item) where T : IBusinessEntity, new()
         {
             lock (locker)
             {
@@ -109,7 +130,34 @@ namespace CoreRepository.DL
         {
             lock (locker)
             {
-                return database.Table<BaseOrder>().FirstOrDefault(c => c.OrderInProgress == false).ID;
+                int id = 0;
+                var currentOrder = database.Table<BaseOrder>().FirstOrDefault(c => c.OrderInProgress == false).ID;
+                
+                //If no current order exists create order
+                if (currentOrder==0)
+                {
+                    var baseOrder = new BaseOrder() {
+                        OrderDate = new System.DateTime(),
+                        OrderInProgress = false,
+                    };
+                  id =  SaveItem(baseOrder);
+                }
+                id = currentOrder;
+                return id;
+            }
+        }
+
+        public IEnumerable<Menu> GetMenuByCategory(string category)
+        {
+            return database.Table<Menu>().Where(c => c.MenuCategory == category).AsEnumerable();
+        }
+
+        public IEnumerable<T> FindById<T>(int id) where T : IBusinessEntity, new()
+        {
+            lock (locker)
+            {
+                var list = database.Table<T>().Where(c => c.ID == id).AsEnumerable();
+                return list;
             }
         }
     }

@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CoreRepository.BL.Contracts;
-using CoreRepository.DL.SQLite;
 
-namespace CoreRepository.BL
+namespace CoreRepository
 {
     public class OrderDetails : IBusinessEntity
     {

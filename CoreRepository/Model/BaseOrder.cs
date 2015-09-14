@@ -1,8 +1,6 @@
 ﻿using System;
-using CoreRepository.BL.Contracts;
-using CoreRepository.DL.SQLite;
 
-namespace CoreRepository.BL
+namespace CoreRepository
 {
     public class BaseOrder : IBusinessEntity
     {

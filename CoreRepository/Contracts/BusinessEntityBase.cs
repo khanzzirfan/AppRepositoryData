@@ -1,6 +1,4 @@
-﻿using CoreRepository.DL.SQLite;
-
-namespace CoreRepository.BL.Contracts
+﻿namespace CoreRepository
 {
     public abstract class BusinessEntityBase: IBusinessEntity 
     {

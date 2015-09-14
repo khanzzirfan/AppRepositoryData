@@ -27,7 +27,7 @@ using System.Reflection;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace CoreRepository.DL.SQLite
+namespace CoreRepository
 {
     public class PrimaryKeyAttribute : Attribute {
     }

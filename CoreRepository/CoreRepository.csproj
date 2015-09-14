@@ -45,8 +45,10 @@
     <Compile Include="Model\Menu.cs" />
     <Compile Include="Model\OrderDetails.cs" />
     <Compile Include="Model\Orders.cs" />
+    <Compile Include="Helpers\PredicateHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DAL\SQLite.cs" />
+    <Compile Include="SampleSeedDB.cs" />
     <Compile Include="TaskDatabase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using CoreRepository.BL;
-using CoreRepository.BL.Contracts;
-using CoreRepository.DL;
 using Tasky.DL.SQLiteBase;
 
 namespace CoreRepository
 {
-    public class AppRepository<T> : IRepository<T> where T:BusinessEntityBase,new()
+    public class AppRepository<T> : IRepository<T> where T: IBusinessEntity, new()
     {
        TaskDatabase db = null;
 		protected static string dbLocation;
@@ -54,7 +52,20 @@ namespace CoreRepository
             return db.CurrentBaseOrder();
         }
 
+        public T Get(Expression<Func<T, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
 
+        public List<Menu> GetMenuByCategory(string category)
+        {
+            return db.GetMenuByCategory(category).ToList();
+        }
+
+        public List<T> FindById(int id)
+        {
+            return db.FindById<T>(id).ToList();
+        }
 
     }
 }
