@@ -62,10 +62,21 @@ namespace CoreRepository
             return db.GetMenuByCategory(category).ToList();
         }
 
+        public List<OrderDetails> GetMenuWithQuantityOrdered(int menuId, int currentOrderId)
+        {
+            return db.GetMenuWithQuantityOrdered(menuId, currentOrderId).ToList();
+        }
+
         public List<T> FindById(int id)
         {
             return db.FindById<T>(id).ToList();
         }
+
+        public int UpdateOrder(int menuId, int orderId, int baseOrderId, decimal quantity, bool updateOrder)
+        {
+            return db.UpdateOrder(menuId, orderId, baseOrderId, quantity, updateOrder);
+        }
+
 
     }
 }

@@ -67,6 +67,7 @@ namespace CoreRepository
         {
             lock (locker)
             {
+				var item = database.Table<T>().FirstOrDefault(x => x.ID == id);
                 return database.Table<T>().FirstOrDefault(x => x.ID == id);
                 // Following throws NotSupportedException - thanks aliegeni
                 //return (from i in Table<T> ()
@@ -131,18 +132,32 @@ namespace CoreRepository
             lock (locker)
             {
                 int id = 0;
-                var currentOrder = database.Table<BaseOrder>().FirstOrDefault(c => c.OrderInProgress == false).ID;
-                
-                //If no current order exists create order
-                if (currentOrder==0)
+
+                try
                 {
-                    var baseOrder = new BaseOrder() {
-                        OrderDate = new System.DateTime(),
-                        OrderInProgress = false,
-                    };
-                  id =  SaveItem(baseOrder);
+                    var baseOrders = database.Table<BaseOrder>().ToList();
+                    if (baseOrders != null && baseOrders.Count > 0)
+                    {
+                        id = baseOrders.FirstOrDefault(c => c.OrderInProgress == false).ID;
+                        return id;
+                    }        
+                        
+                    //If no current order exists create order
+					else 
+                    {
+                        var baseOrder = new BaseOrder()
+                        {
+                            OrderDate = new System.DateTime(),
+                            OrderInProgress = false,
+                        };
+                        id = SaveItem(baseOrder);
+                    }
                 }
-                id = currentOrder;
+                catch (Exception ex)
+                {
+                    string e = ex.Message;
+                }
+
                 return id;
             }
         }
@@ -150,6 +165,12 @@ namespace CoreRepository
         public IEnumerable<Menu> GetMenuByCategory(string category)
         {
             return database.Table<Menu>().Where(c => c.MenuCategory == category).AsEnumerable();
+        }
+
+        public IEnumerable<OrderDetails> GetMenuWithQuantityOrdered(int menuId, int baseOrderId)
+        {
+            var orderId = GetOrderByBase(baseOrderId).FirstOrDefault().ID;
+            return GetOrderDetailsByOrder(orderId);
         }
 
         public IEnumerable<T> FindById<T>(int id) where T : IBusinessEntity, new()
@@ -160,5 +181,95 @@ namespace CoreRepository
                 return list;
             }
         }
+        
+        /// <summary>
+        /// UpdateOrder; updates the current order based on baseOrderId
+        /// </summary>
+        /// <param name="menuId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="baseOrderId"></param>
+        /// <param name="quantity"></param>
+        /// <param name="updateOrder"></param>
+        /// <returns>This query return the order detail Id</returns>
+        public int UpdateOrder(int menuId, int orderId, int baseOrderId, decimal quantity, bool updateOrder)
+        {
+            var orderDetailId = 0;
+            if (!updateOrder)
+            { // remove order
+                var orderDetail = GetItems<OrderDetails>()
+                    .FirstOrDefault(c => c.MenuID == menuId && c.OrderID == orderId).ID;
+                if (orderDetail != null || orderDetail>0) {
+                    DeleteItem<OrderDetails>(orderDetail);
+                }
+                DeleteItem<Orders>(orderId);
+                DeleteItem<Menu>(menuId);
+
+                return orderDetailId;
+            }
+
+            var menuItem = GetItem<Menu>(menuId);
+            var dateorder = DateTime.Now;
+            //GetCurrent Orders
+            if (baseOrderId == 0)
+            {
+                var baseOrder = new BaseOrder()
+                {
+                    OrderDate = dateorder,
+                    OrderInProgress = false,
+                };
+                baseOrderId = SaveItem(baseOrder);
+            }
+            //Get OrderList
+            var orders = GetItem<Orders>(orderId);
+            if (orders == null)
+            {
+                orders = new Orders();
+                orders.BaseOrderID = baseOrderId;
+                orders.CustomerID = baseOrderId;
+                orders.OrderRequired = dateorder;
+                orders.OrderDate = dateorder;
+                orderId = SaveItem(orders);
+            }
+
+            var orderDetails = GetItems<OrderDetails>().FirstOrDefault(c => c.MenuID == menuId && c.OrderID == orderId);
+            if (orderDetails == null)
+            {
+                orderDetails = new OrderDetails()
+                {
+                    MenuID = menuId,
+                    OrderID = orderId,
+                    Price = menuItem.Price,
+                    Quantity = quantity,
+                    TotalAmount = menuItem.Price * quantity,
+                };
+                orderDetailId= SaveItem(orderDetails);
+            }else
+            {
+                orderDetails.Quantity = quantity;
+                orderDetails.Price = menuItem.Price;
+                orderDetails.TotalAmount = quantity * menuItem.Price;
+                orderDetailId=SaveItem(orderDetails);
+            }
+
+            return orderDetailId;
+        }
+
+        public decimal GetItemTotalByMenu(int menuId, int orderId)
+        {
+            var detail = database.Table<OrderDetails>().ToList();
+            if (detail != null && detail.Count > 0)
+            {
+                var counter = detail.Where(c => c.MenuID == menuId && c.OrderID == orderId)
+                    .Select(c => new
+                    {
+                        total = c.Price * c.Quantity
+                    }).FirstOrDefault();
+                var total = counter!=null? counter.total:0.0m;
+            }
+            return 0.0m;
+        }
+
+
+
     }
 }
