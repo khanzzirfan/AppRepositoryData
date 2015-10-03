@@ -37,6 +37,11 @@ namespace CoreRepository
             return db.DeleteItem(entity);
         }
 
+		public int DeleteItem(int id)
+		{
+			return db.DeleteItem<T>(id);
+		}
+
         //Custom Code  Implementation
         public List<Orders> GetOrderByBase(int id)
         {
@@ -77,6 +82,10 @@ namespace CoreRepository
             return db.UpdateOrder(menuId, orderId, baseOrderId, quantity, updateOrder);
         }
 
+		public List<OrderDetailDTO> GetOrderDetailDTO()
+		{
+			return db.GetOrderDetailDTO ().ToList ();
+		}
 
     }
 }

@@ -196,15 +196,12 @@ namespace CoreRepository
             var orderDetailId = 0;
             if (!updateOrder)
             { // remove order
-                var orderDetail = GetItems<OrderDetails>()
-                    .FirstOrDefault(c => c.MenuID == menuId && c.OrderID == orderId).ID;
-                if (orderDetail != null || orderDetail>0) {
-                    DeleteItem<OrderDetails>(orderDetail);
+				var OD = GetItems<OrderDetails>();
+				var detail1 = OD.Where(c => c.MenuID == menuId && c.OrderID == orderId).FirstOrDefault();
+				if (detail1 != null && detail1.ID > 0) {
+					DeleteItem<OrderDetails>(detail1);
                 }
-                DeleteItem<Orders>(orderId);
-                DeleteItem<Menu>(menuId);
-
-                return orderDetailId;
+                return 1;
             }
 
             var menuItem = GetItem<Menu>(menuId);
@@ -234,14 +231,12 @@ namespace CoreRepository
             var orderDetails = GetItems<OrderDetails>().FirstOrDefault(c => c.MenuID == menuId && c.OrderID == orderId);
             if (orderDetails == null)
             {
-                orderDetails = new OrderDetails()
-                {
-                    MenuID = menuId,
-                    OrderID = orderId,
-                    Price = menuItem.Price,
-                    Quantity = quantity,
-                    TotalAmount = menuItem.Price * quantity,
-                };
+				orderDetails = new OrderDetails ();
+				orderDetails.MenuID = menuId;
+				orderDetails.OrderID = orderId;
+				orderDetails.Price = menuItem.Price;
+				orderDetails.Quantity = quantity;
+				orderDetails.TotalAmount = menuItem.Price * quantity;
                 orderDetailId= SaveItem(orderDetails);
             }else
             {
@@ -269,6 +264,18 @@ namespace CoreRepository
             return 0.0m;
         }
 
+		public IEnumerable<OrderDetailDTO> GetOrderDetailDTO()
+		{
+			var selectQuery = @"Select m.Name As MenuName,
+									   od.Quantity,
+									   od.Price,
+										od.TotalAmount,
+										od.Id AS OrderDetailId 
+								  FROM Menu m
+								  JOIN OrderDetails od	 ON m.Id = od.MenuID ";
+			var dto = database.Query<OrderDetailDTO> (selectQuery);
+			return dto;
+		}
 
 
     }

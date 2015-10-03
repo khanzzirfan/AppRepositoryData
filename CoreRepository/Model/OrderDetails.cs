@@ -12,6 +12,7 @@ namespace CoreRepository
         {
         }
 
+		[PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         [Indexed]
         public int OrderID { get; set; }
@@ -23,4 +24,14 @@ namespace CoreRepository
         public decimal TaxAmount { get; set; }
 
     }
+
+	public class OrderDetailDTO
+	{
+		public int OrderDetailId { get; set; }
+		public string MenuName { get; set; }
+		public decimal Quantity { get; set; }
+		public decimal Price { get; set; }
+
+		public decimal TotalAmount { get; set; }
+	}
 }

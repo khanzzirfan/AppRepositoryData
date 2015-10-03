@@ -58,7 +58,7 @@ namespace CoreRepository
                 },
                 new Menu ()
                 {
-                    Name ="Chicken Smoked",
+                    Name ="Chicken Smoked Chicken Smoked",
                     Description ="Smoked Chicken",
                     MenuCategory = "Chicken",
                     MenuType="Mains",
@@ -85,6 +85,59 @@ namespace CoreRepository
                     ThumbUrl=c1_chicken_v5,
                 },
 
+                //Add Part 2 for long list testing
+
+                 new Menu ()
+                {
+                    Name ="Chicken Afgani V2",
+                    Description ="Afghani Chicken is another specialty recipe of Asian cuisine.",
+
+                    MenuCategory = "Chicken",
+                    MenuType="Mains",
+                    Price=15.00m,
+
+                    ThumbUrl=c1_chicken_v1,
+                },
+
+                new Menu ()
+                {
+                    Name ="Chicken Kebab V2",
+                    Description ="chicken kebab, better known as ‘tavuk şiş’ (tah-VOOK’ SHEESH’), is often served alongside grilled beef and lamb.",
+                    MenuCategory = "Chicken",
+                    MenuType="Mains",
+                    Price=20.00m,
+                    ThumbUrl=c1_chicken_v2,
+                },
+                new Menu ()
+                {
+                    Name ="Chicken Smoked V2",
+                    Description ="Smoked chicken is highly versatile in that it is cooked and ready to slice as cold meat or can be incorporated into a recipe such as our delicious “feed a crowd smoked chicken pie” and give a lovely robust smoky chicken flavour.",
+                    MenuCategory = "Chicken",
+                    MenuType="Mains",
+                    Price=15.00m,
+                    ThumbUrl=c1_chicken_v3,
+                },
+                new Menu ()
+                {
+                    Name ="Butter Chicken V2",
+                    Description ="Butter Chicken is among the best known Indian foods all over the world. Its gravy can be made as hot or mild as you like so it suits most palates. Also commonly known as Murg Makhani, Butter Chicken tastes great with Kaali Daal (black lentils), Naans and a green salad.",
+                    MenuCategory = "Chicken",
+                    MenuType="Mains",
+                    Price=15.00m,
+                    ThumbUrl=c1_chicken_v4,
+                },
+
+                new Menu ()
+                {
+                    Name ="Chicken Tikka V2",
+                    Description ="The word Tikka means bits, pieces or chunks. Chicken Tikka is an easy-to-cook dish in which chicken chunks are marinated in special spices and then grilled on skewers. This is one of India's most popular dishes. Chicken Tikka can also be made into Chicken Tikka Masala, a tasty gravy dish.",
+                    MenuCategory = "Chicken",
+                    MenuType="Mains",
+                    Price=15.00m,
+                    ThumbUrl=c1_chicken_v5,
+                },
+
+
             }; // End of adding MenuList
 
             #endregion
@@ -97,7 +150,7 @@ namespace CoreRepository
                 MenuCategory = "Menu",
                 MenuType = "Mains",
                 Price = 15.00m,
-                ThumbUrl = c1_chicken_v1,
+					ThumbUrl = k1_kebab_v1,
             });
 
             MenuList.Add(new Menu()
@@ -116,7 +169,7 @@ namespace CoreRepository
                 MenuCategory = "Menu",
                 MenuType = "Mains",
                 Price = 15.00m,
-                ThumbUrl = c1_chicken_v1,
+					ThumbUrl = l1_lamb_v1,
             });
 
             MenuList.Add(new Menu()
@@ -126,7 +179,7 @@ namespace CoreRepository
                 MenuCategory = "Menu",
                 MenuType = "Mains",
                 Price = 15.00m,
-                ThumbUrl = c1_chicken_v1,
+					ThumbUrl = gv_vege,
             });
 
             MenuList.Add(new Menu()
@@ -145,7 +198,7 @@ namespace CoreRepository
                 MenuCategory = "Menu",
                 MenuType = "Mains",
                 Price = 15.00m,
-                ThumbUrl = c1_chicken_v1,
+					ThumbUrl = d1_dessert_v1,
             });
 
             MenuList.Add(new Menu()
@@ -155,7 +208,7 @@ namespace CoreRepository
                 MenuCategory = "Menu",
                 MenuType = "Mains",
                 Price = 15.00m,
-                ThumbUrl = c1_chicken_v1,
+					ThumbUrl = gv_side_dish,
             });
             #endregion
 
