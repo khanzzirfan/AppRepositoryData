@@ -9,7 +9,7 @@ namespace TheResturantApp.Models
 {
     public class TRAContext : DbContext
     {
-        private string schemaName = "irfank";
+        //private string schemaName = "irfank";
         public TRAContext()
             : base("name=TRAContext")
         {
@@ -25,10 +25,10 @@ namespace TheResturantApp.Models
 
             base.OnModelCreating(modelBuilder);
             modelBuilder.Configurations.Add(new CustomerMap());
-            modelBuilder.Entity<Customer>().ToTable("customer", schemaName);
+            modelBuilder.Entity<Customer>().ToTable("customer");
 
-            modelBuilder.Configurations.Add(new OrderMap());
-            modelBuilder.Entity<Order>().ToTable("orders", schemaName);
+            //modelBuilder.Configurations.Add(new OrderMap());
+           // modelBuilder.Entity<Order>().ToTable("orders");
 
             //Setup Stoed Procedures
 

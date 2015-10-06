@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -170,13 +171,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201508091757486_AddTableCustomerV1.cs" />
-    <Compile Include="Migrations\201508091757486_AddTableCustomerV1.Designer.cs">
-      <DependentUpon>201508091757486_AddTableCustomerV1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201509300438511_AddOrderTablev1.cs" />
-    <Compile Include="Migrations\201509300438511_AddOrderTablev1.Designer.cs">
-      <DependentUpon>201509300438511_AddOrderTablev1.cs</DependentUpon>
+    <Compile Include="Migrations\201510060658435_CustomerTableMapping.cs" />
+    <Compile Include="Migrations\201510060658435_CustomerTableMapping.Designer.cs">
+      <DependentUpon>201510060658435_CustomerTableMapping.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -254,11 +251,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201508091757486_AddTableCustomerV1.resx">
-      <DependentUpon>201508091757486_AddTableCustomerV1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201509300438511_AddOrderTablev1.resx">
-      <DependentUpon>201509300438511_AddOrderTablev1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510060658435_CustomerTableMapping.resx">
+      <DependentUpon>201510060658435_CustomerTableMapping.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

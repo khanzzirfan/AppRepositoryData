@@ -7,13 +7,13 @@ namespace TheResturantApp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddOrderTablev1 : IMigrationMetadata
+    public sealed partial class CustomerTableMapping : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddOrderTablev1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CustomerTableMapping));
         
         string IMigrationMetadata.Id
         {
-            get { return "201509300438511_AddOrderTablev1"; }
+            get { return "201510060658435_CustomerTableMapping"; }
         }
         
         string IMigrationMetadata.Source

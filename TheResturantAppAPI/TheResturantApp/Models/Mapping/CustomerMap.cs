@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Data.Linq;
-using System.Data.Entity.ModelConfiguration;
-
-using System;
-using System.Linq;
-using System.Web;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Data.Linq.Mapping;
+﻿using System.Data.Entity.ModelConfiguration;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TheResturantApp.Models.Mapping
@@ -39,8 +27,18 @@ namespace TheResturantApp.Models.Mapping
             //Table and Column Mappings;
             this.ToTable("customer");
             this.Property(t => t.CustomerId).HasColumnName("customer_id");
-            this.Property(t => t.Name).HasColumnName("customer_name");
-            this.Property(t => t.Phone).HasColumnName("customer_phone");
+            this.Property(t => t.Name).HasColumnName("full_name");
+            this.Property(t => t.Phone).HasColumnName("phone_number");
+
+            this.Property(t => t.FirstName).HasColumnName("first_name");
+            this.Property(t => t.LastName).HasColumnName("last_name");
+            this.Property(t => t.DOB).HasColumnName("dob");
+            this.Property(t => t.IRDNumber).HasColumnName("ird_number");
+            this.Property(t => t.Gender).HasColumnName("gender");
+            this.Property(t => t.Email).HasColumnName("email");
+            this.Property(t => t.HomeNumber).HasColumnName("home_number");
+            this.Property(t => t.Active).HasColumnName("active");
+
 
             this.Property(t => t.InsertDatetime).HasColumnName("insert_datetime");
             this.Property(t => t.InsertUser).HasColumnName("insert_user");

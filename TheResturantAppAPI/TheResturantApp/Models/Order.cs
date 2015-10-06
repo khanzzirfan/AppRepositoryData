@@ -18,10 +18,25 @@ namespace TheResturantApp.Models
         [Key]
         [Column]
         public int Id { get; set; }
+
+        [Column, MaxLength(100)]
+        public string OrderName { get; set; }
         
         [Column]
         public int CustomerId { get; set; }
-        
+
+        [Column]
+        public Nullable<DateTime> OrderDate { get; set; }
+        [Column]
+        public Nullable<DateTime> RequiredDate { get; set; }
+        [Column]
+        public Nullable<DateTime> OrderComplete { get; set; }
+
+        [Column, MaxLength(1)]
+        public string Active { get; set; }
+        [Column]
+        public decimal Discount { get; set; }
+
         [Column]
         public decimal TotalAmount { get; set; }
         
@@ -31,7 +46,7 @@ namespace TheResturantApp.Models
         [Column]
         public decimal NetAmount { get; set; }
 
-        [Column, MaxLength(400)]
+        [Column, MaxLength(500)]
         public string Comments { get; set; }
         
         [Column, Required]
