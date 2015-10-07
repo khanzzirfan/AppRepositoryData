@@ -47,7 +47,7 @@ namespace TheResturantApp.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != order.Id)
+            if (id != order.ID)
             {
                 return BadRequest();
             }
@@ -102,14 +102,14 @@ namespace TheResturantApp.Controllers
 
                 if (Convert.ToInt32(orderIdParameter.Value) > 1)
                 {
-                    order.Id = Convert.ToInt32(orderIdParameter.Value);
+                    order.ID = Convert.ToInt32(orderIdParameter.Value);
                 }
             });
 
             //db.Orders.Add(order);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = order.Id }, order);
+            return CreatedAtRoute("DefaultApi", new { id = order.ID }, order);
         }
 
         // DELETE: api/Orders/5
@@ -139,7 +139,7 @@ namespace TheResturantApp.Controllers
 
         private bool OrderExists(int id)
         {
-            return db.Orders.Count(e => e.Id == id) > 0;
+            return db.Orders.Count(e => e.ID == id) > 0;
         }
     }
 }

@@ -8,8 +8,8 @@ namespace TheResturantApp.Models
 {
     public class OrderDTO
     {
-        public int OrderId { get; set; }
-        public int CustomerId { get; set; }
+        public decimal OrderId { get; set; }
+        public decimal CustomerId { get; set; }
 
     }
 }

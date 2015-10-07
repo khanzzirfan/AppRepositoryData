@@ -27,9 +27,21 @@ namespace TheResturantApp.Models
             modelBuilder.Configurations.Add(new CustomerMap());
             modelBuilder.Entity<Customer>().ToTable("customer");
 
-            //modelBuilder.Configurations.Add(new OrderMap());
-           // modelBuilder.Entity<Order>().ToTable("orders");
+            modelBuilder.Configurations.Add(new OrderMap());
+            modelBuilder.Entity<Order>().ToTable("orders");
 
+            modelBuilder.Configurations.Add(new MenuTypeMap());
+            modelBuilder.Entity<MenuType>().ToTable("menu_type");
+
+          
+            modelBuilder.Configurations.Add(new MenuMap());
+            modelBuilder.Entity<Menu>().ToTable("menu");
+
+            modelBuilder.Configurations.Add(new MenuCategoryMap());
+            modelBuilder.Entity<MenuCategory>().ToTable("menu_category");
+
+            modelBuilder.Configurations.Add(new TransactionMap());
+            modelBuilder.Entity<Transactions>().ToTable("order_transaction");
             //Setup Stoed Procedures
 
         }

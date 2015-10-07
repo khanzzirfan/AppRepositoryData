@@ -15,7 +15,7 @@ namespace TheResturantApp.Models
 
         [Key]
         [Column]
-        public int CustomerId { get; set; }
+        public decimal CustomerId { get; set; }
 
         [Column, Required, MaxLength(100)]
         public string Name { get; set; }

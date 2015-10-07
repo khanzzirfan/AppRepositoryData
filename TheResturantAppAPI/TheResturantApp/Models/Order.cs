@@ -8,22 +8,18 @@ using System.Threading.Tasks;
 
 namespace TheResturantApp.Models
 {
-    public class Order
+    public class Order:AuditFields
     {
         public Order()
         {
-
         }
-
-        [Key]
-        [Column]
-        public int Id { get; set; }
-
+        
         [Column, MaxLength(100)]
         public string OrderName { get; set; }
         
         [Column]
         public int CustomerId { get; set; }
+        public virtual Customer Customer { get; set; }
 
         [Column]
         public Nullable<DateTime> OrderDate { get; set; }
@@ -32,8 +28,6 @@ namespace TheResturantApp.Models
         [Column]
         public Nullable<DateTime> OrderComplete { get; set; }
 
-        [Column, MaxLength(1)]
-        public string Active { get; set; }
         [Column]
         public decimal Discount { get; set; }
 
@@ -48,23 +42,5 @@ namespace TheResturantApp.Models
 
         [Column, MaxLength(500)]
         public string Comments { get; set; }
-        
-        [Column, Required]
-        public DateTime InsertDateTime { get; set; }
-
-        [Column, Required, MaxLength(100)]
-        public string InsertProcess { get; set; }
-
-        [Column, Required, MaxLength(100)]
-        public string InsertUser { get; set; }
-
-        [Column]
-        public DateTime? UpdateDateTime { get; set; }
-        
-        [Column,MaxLength(100)]
-        public string Updateuser { get; set; }
-
-        [Column, MaxLength(100)]
-        public string UpdateProcess { get; set; }
     }
 }

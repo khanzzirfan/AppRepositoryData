@@ -5,7 +5,7 @@ namespace TheResturantApp.Models
 {
     public class CustomerDTO
     {
-        public int CustomerId { get; set; }
+        public decimal CustomerId { get; set; }
         public string Name { get; set; }
         public string Phone { get; set; }
 
@@ -14,7 +14,7 @@ namespace TheResturantApp.Models
     public class CustomerDetailDTO
     {
 
-        public int CustomerId { get; set; }
+        public decimal CustomerId { get; set; }
         public string Name { get; set; }
         public string Phone { get; set; }
         public DateTime InsertDatetime { get;set; }

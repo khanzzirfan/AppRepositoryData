@@ -175,15 +175,40 @@
     <Compile Include="Migrations\201510060658435_CustomerTableMapping.Designer.cs">
       <DependentUpon>201510060658435_CustomerTableMapping.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510071045537_AddMenuTabless.cs" />
+    <Compile Include="Migrations\201510071045537_AddMenuTabless.Designer.cs">
+      <DependentUpon>201510071045537_AddMenuTabless.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510071054151_AddCategorytables.cs" />
+    <Compile Include="Migrations\201510071054151_AddCategorytables.Designer.cs">
+      <DependentUpon>201510071054151_AddCategorytables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510071058090_VirtualCoulmns2.cs" />
+    <Compile Include="Migrations\201510071058090_VirtualCoulmns2.Designer.cs">
+      <DependentUpon>201510071058090_VirtualCoulmns2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510071127349_orderTransactionv1.cs" />
+    <Compile Include="Migrations\201510071127349_orderTransactionv1.Designer.cs">
+      <DependentUpon>201510071127349_orderTransactionv1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AuditFields.cs" />
     <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\CustomerDTO.cs" />
+    <Compile Include="Models\DTO\CustomerDTO.cs" />
     <Compile Include="Models\Mapping\CustomerMap.cs" />
+    <Compile Include="Models\Mapping\MenuCategoryMap.cs" />
+    <Compile Include="Models\Mapping\MenuMap.cs" />
+    <Compile Include="Models\Mapping\MenuTypeMap.cs" />
     <Compile Include="Models\Mapping\OrderMap.cs" />
+    <Compile Include="Models\Mapping\TransactionMap.cs" />
+    <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\MenuCategory.cs" />
+    <Compile Include="Models\MenuType.cs" />
     <Compile Include="Models\Order.cs" />
-    <Compile Include="Models\OrderDTO.cs" />
+    <Compile Include="Models\DTO\OrderDTO.cs" />
     <Compile Include="Models\TheResturantAppContext.cs" />
     <Compile Include="Models\TRAContext.cs" />
+    <Compile Include="Models\Transactions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -253,6 +278,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201510060658435_CustomerTableMapping.resx">
       <DependentUpon>201510060658435_CustomerTableMapping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510071045537_AddMenuTabless.resx">
+      <DependentUpon>201510071045537_AddMenuTabless.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510071054151_AddCategorytables.resx">
+      <DependentUpon>201510071054151_AddCategorytables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510071058090_VirtualCoulmns2.resx">
+      <DependentUpon>201510071058090_VirtualCoulmns2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510071127349_orderTransactionv1.resx">
+      <DependentUpon>201510071127349_orderTransactionv1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
