@@ -3,10 +3,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TheResturantApp.Models.Mapping
 {
-    public class MenuTypeMap:EntityTypeConfiguration<MenuType>
+    public class ReservationMap : EntityTypeConfiguration<Reservation>
     {
-        public MenuTypeMap()
+        public ReservationMap()
         {
+
             //Primary key
             this.HasKey(t => t.ID);
 
@@ -15,9 +16,20 @@ namespace TheResturantApp.Models.Mapping
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             //Table and Column Mappings;
-            this.ToTable("menu_type");
-            this.Property(t => t.ID).HasColumnName("menu_type_id");
-            this.Property(t => t.Description).HasColumnName("name");
+            this.ToTable("reservation");
+            this.Property(t => t.ID).HasColumnName("reservation_id");
+            this.Property(t => t.Name).HasColumnName("name");
+
+            this.Property(t => t.Guests).HasColumnName("guests");
+            this.Property(t => t.StatusID).HasColumnName("status_id");
+            this.Property(t => t.Email).HasColumnName("email");
+            this.Property(t => t.Phone).HasColumnName("phone_number");
+            this.Property(t => t.Comments).HasColumnName("comments");
+
+            this.Property(t => t.Date).HasColumnName("start_date");
+            this.Property(t => t.Time).HasColumnName("start_time");
+            this.Property(t => t.TableID).HasColumnName("table_id");
+
 
             //Audit Fields always
             this.Property(t => t.Active).HasColumnName("active");
@@ -28,7 +40,7 @@ namespace TheResturantApp.Models.Mapping
             this.Property(t => t.UpdateProcess).HasColumnName("update_process");
             this.Property(t => t.InsertUser).HasColumnName("insert_user");
             this.Property(t => t.UpdateUser).HasColumnName("update_user");
-
         }
+
     }
 }

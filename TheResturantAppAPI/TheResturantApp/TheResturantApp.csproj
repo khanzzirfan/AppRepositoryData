@@ -167,6 +167,7 @@
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\ReservationsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -191,21 +192,32 @@
     <Compile Include="Migrations\201510071127349_orderTransactionv1.Designer.cs">
       <DependentUpon>201510071127349_orderTransactionv1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510080206194_PendingMig_V1.cs" />
+    <Compile Include="Migrations\201510080206194_PendingMig_V1.Designer.cs">
+      <DependentUpon>201510080206194_PendingMig_V1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510080407162_reservation.cs" />
+    <Compile Include="Migrations\201510080407162_reservation.Designer.cs">
+      <DependentUpon>201510080407162_reservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AuditFields.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\DTO\CustomerDTO.cs" />
+    <Compile Include="Models\DTO\ReservationDTO.cs" />
     <Compile Include="Models\Mapping\CustomerMap.cs" />
     <Compile Include="Models\Mapping\MenuCategoryMap.cs" />
     <Compile Include="Models\Mapping\MenuMap.cs" />
     <Compile Include="Models\Mapping\MenuTypeMap.cs" />
     <Compile Include="Models\Mapping\OrderMap.cs" />
+    <Compile Include="Models\Mapping\ReservationMap.cs" />
     <Compile Include="Models\Mapping\TransactionMap.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\MenuCategory.cs" />
     <Compile Include="Models\MenuType.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\DTO\OrderDTO.cs" />
+    <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\TheResturantAppContext.cs" />
     <Compile Include="Models\TRAContext.cs" />
     <Compile Include="Models\Transactions.cs" />
@@ -290,6 +302,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510071127349_orderTransactionv1.resx">
       <DependentUpon>201510071127349_orderTransactionv1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510080206194_PendingMig_V1.resx">
+      <DependentUpon>201510080206194_PendingMig_V1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510080407162_reservation.resx">
+      <DependentUpon>201510080407162_reservation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -18,7 +18,7 @@ namespace TheResturantApp.Models
 
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Order> Orders { get; set; }
-
+        public DbSet<Reservation> Reservations { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -43,7 +43,10 @@ namespace TheResturantApp.Models
             modelBuilder.Configurations.Add(new TransactionMap());
             modelBuilder.Entity<Transactions>().ToTable("order_transaction");
             //Setup Stoed Procedures
-
+            
+            modelBuilder.Configurations.Add(new ReservationMap());
+            modelBuilder.Entity<Reservation>().ToTable("reservation");
+            
         }
 
     }
