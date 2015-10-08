@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.SqlServer;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -21,7 +23,7 @@ namespace TheResturantApp.Controllers
         // GET: api/Reservations
         public IQueryable<ReservationDTO> GetReservations()
         {
-            var reservation = from d in db.Reservations
+            var reservation = (from d in db.Reservations
                               select new ReservationDTO()
                               {
                                   Comment = d.Comments,
@@ -31,7 +33,8 @@ namespace TheResturantApp.Controllers
                                   Guests = d.Guests,
                                   Name = d.Name,
                                   Phone = d.Phone
-                              };
+                              });
+           
 
             return reservation;
         }
@@ -96,22 +99,48 @@ namespace TheResturantApp.Controllers
 
         // POST: api/Reservations
         [ResponseType(typeof(Reservation))]
-        public async Task<IHttpActionResult> PostReservation(Reservation reservation)
+        public async Task<IHttpActionResult> PostReservation(Reservation res)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return BadRequest(ModelState);
+            //}
+            var paramName = new SqlParameter("@pv_name", res.Name);
+            var paramGuest = new SqlParameter("@pn_guest", res.Guests);
+            var paramEmail = new SqlParameter("@pv_email", res.Email);
+            var paramPhone = new SqlParameter("@pv_phone", res.Phone);
+            var paramComment = new SqlParameter("@pv_comment", res.Comments);
+            var paramDate = new SqlParameter("@pv_date", res.Date);
+            var paramTime = new SqlParameter("@pv_time", res.Time);
 
-            db.Reservations.Add(reservation);
+            var id = new SqlParameter();
+            id.ParameterName = "@pn_output_id";
+            id.Direction = ParameterDirection.Output;
+            id.SqlDbType = SqlDbType.Decimal;
 
             try
             {
+                await db.Database.ExecuteSqlCommandAsync("Exec dbp_add_reservation  @pv_name, @pn_guest, @pv_email,@pv_phone, @pv_comment,@pv_date,@pv_time, @pn_output_id OUTPUT",
+                paramName, paramGuest, paramEmail, 
+                paramPhone, paramComment, 
+                paramDate, paramTime, id).ContinueWith((result)=> {
+
+                    var spResult = result.Result;
+                    if (Convert.ToDecimal(id.Value) > 1)
+                    {
+                        res.ID = Convert.ToDecimal(id.Value);
+                    }
+                });
+                
                 await db.SaveChangesAsync();
+            }
+            catch(AggregateException ex)
+            {
+                var excep = ex.Message;
             }
             catch (DbUpdateException)
             {
-                if (ReservationExists(reservation.ID))
+                if (ReservationExists(res.ID))
                 {
                     return Conflict();
                 }
@@ -121,7 +150,7 @@ namespace TheResturantApp.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = reservation.ID }, reservation);
+            return CreatedAtRoute("DefaultApi", new { id = res.ID }, res);
         }
 
         // DELETE: api/Reservations/5
