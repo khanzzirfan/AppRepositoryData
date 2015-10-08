@@ -17,7 +17,7 @@ namespace TheResturantApp.Models.Mapping
             //Table and Column Mappings;
             this.ToTable("menu_type");
             this.Property(t => t.ID).HasColumnName("menu_type_id");
-            this.Property(t => t.Description).HasColumnName("name");
+            this.Property(t => t.Description).HasColumnName("menu_type");
 
             //Audit Fields always
             this.Property(t => t.Active).HasColumnName("active");

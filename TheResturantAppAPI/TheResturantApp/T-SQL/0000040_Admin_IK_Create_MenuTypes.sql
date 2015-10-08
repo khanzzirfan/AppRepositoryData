@@ -4,7 +4,7 @@
 -- 2.  Define the column names and additional columns
 -- 3.  Save as new file according to Agility Convention E.g. 00010_AGL-101_RC_TABLE_utl_temp_table.sql
 ---------------------------------------------------------------------------------------------------------------
---- DROP TABLE menu_type
+
 -- The following applies if you want to create a table from scratch
 IF NOT EXISTS(SELECT *
                 FROM sys.objects
@@ -14,7 +14,7 @@ BEGIN
    -- Define your columns in your table
    CREATE TABLE dbo.[menu_type]
    (      menu_type_id           NUMERIC(18)  IDENTITY PRIMARY KEY CLUSTERED,
-          name 	                 VARCHAR(100) COLLATE DATABASE_DEFAULT NULL,
+          menu_type              VARCHAR(100) COLLATE DATABASE_DEFAULT NULL,
 
 		  active              VARCHAR(1)   COLLATE DATABASE_DEFAULT NOT NULL,
           insert_datetime     DATETIME     NOT NULL,
