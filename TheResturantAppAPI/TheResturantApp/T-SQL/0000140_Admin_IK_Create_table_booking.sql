@@ -4,7 +4,7 @@
 -- 2.  Define the column names and additional columns
 -- 3.  Save as new file according to Agility Convention E.g. 00010_AGL-101_RC_TABLE_utl_temp_table.sql
 ---------------------------------------------------------------------------------------------------------------
-
+---DROP TABLE reservation
 -- The following applies if you want to create a table from scratch
 IF NOT EXISTS(SELECT *
                 FROM sys.objects
@@ -15,6 +15,7 @@ BEGIN
    CREATE TABLE dbo.[reservation]
    (      reservation_id       NUMERIC(18)  IDENTITY PRIMARY KEY CLUSTERED,
           name				   VARCHAR(100) COLLATE DATABASE_DEFAULT NULL,
+		  guests			   INT	NOT NULL,
 		  status_id			   NUMERIC(18),
 		  email				   VARCHAR(100) COLLATE DATABASE_DEFAULT NULL,
 		  phone_number		   VARCHAR(10) COLLATE DATABASE_DEFAULT NULL,			

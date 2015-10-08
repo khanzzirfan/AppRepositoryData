@@ -19,6 +19,8 @@ namespace TheResturantApp.Models
         {
         }
 
+       
+
         //public System.Data.Entity.DbSet<TheResturantApp.Models.Order> Orders { get; set; }
     
     }

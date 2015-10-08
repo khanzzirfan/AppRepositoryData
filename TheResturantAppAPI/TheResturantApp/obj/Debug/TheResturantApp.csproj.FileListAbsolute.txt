@@ -128,3 +128,9 @@ C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheRest
 C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheResturantApp.pdb
 C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheResturantApp.Migrations.CustomerTableMapping.resources
 C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheResturantApp.csproj.GenerateResource.Cache
+C:\GitHub\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheResturantApp.Migrations.AddMenuTabless.resources
+C:\GitHub\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheResturantApp.Migrations.AddCategorytables.resources
+C:\GitHub\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheResturantApp.Migrations.VirtualCoulmns2.resources
+C:\GitHub\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheResturantApp.Migrations.orderTransactionv1.resources
+C:\GitHub\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheResturantApp.Migrations.PendingMig_V1.resources
+C:\GitHub\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheResturantApp.Migrations.reservation.resources
