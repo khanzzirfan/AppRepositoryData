@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using Microsoft.AspNet.Identity.EntityFramework;
 using TheResturantApp.Models.Mapping;
 
 namespace TheResturantApp.Models
 {
-    public class TRAContext : DbContext
+    public class TRAContext : IdentityDbContext<IdentityUser>
     {
         //private string schemaName = "irfank";
         public TRAContext()
@@ -46,6 +47,9 @@ namespace TheResturantApp.Models
             
             modelBuilder.Configurations.Add(new ReservationMap());
             modelBuilder.Entity<Reservation>().ToTable("reservation");
+
+            modelBuilder.Configurations.Add(new UserModelMap());
+            modelBuilder.Entity<UserModel>().ToTable("user_login");
             
         }
 

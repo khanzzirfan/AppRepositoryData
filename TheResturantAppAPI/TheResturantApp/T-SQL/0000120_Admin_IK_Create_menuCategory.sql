@@ -9,7 +9,7 @@
 IF NOT EXISTS(SELECT *
                 FROM sys.objects
                WHERE TYPE = 'U'
-                 AND NAME = 'menu_category')
+                 AND NAME = 'user_login')
 BEGIN
    -- Define your columns in your table
    CREATE TABLE dbo.[menu_category]
