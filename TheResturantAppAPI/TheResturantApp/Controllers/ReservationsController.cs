@@ -153,6 +153,78 @@ namespace TheResturantApp.Controllers
             return CreatedAtRoute("DefaultApi", new { id = res.ID }, res);
         }
 
+
+          // POST: api/ReservationsDTO
+        //http://localhost:32661/api/ReservationDTO
+        [Route("api/ReservationDTO")]
+        [ResponseType(typeof(ReservationDTO))]
+        public async Task<IHttpActionResult> PostReservationDTO(ReservationDTO res)
+        {
+            var paramName = new SqlParameter("@pv_name", res.Name);
+            var paramGuest = new SqlParameter("@pn_guest", res.Guests);
+            var paramEmail = new SqlParameter("@pv_email", res.Email);
+            var paramPhone = new SqlParameter("@pv_phone", res.Phone);
+            var paramComment = new SqlParameter("@pv_comment", res.Comment);
+            var paramDate = new SqlParameter("@pv_date", res.Date);
+            var paramTime = new SqlParameter("@pv_time", res.Time);
+
+            var id = new SqlParameter();
+            id.ParameterName = "@pn_output_id";
+            id.Direction = ParameterDirection.Output;
+            id.SqlDbType = SqlDbType.Decimal;
+
+            try
+            {
+                await db.Database.ExecuteSqlCommandAsync("Exec dbp_add_reservation  @pv_name, @pn_guest, @pv_email,@pv_phone, @pv_comment,@pv_date,@pv_time, @pn_output_id OUTPUT",
+                paramName, paramGuest, paramEmail,
+                paramPhone, paramComment,
+                paramDate, paramTime, id).ContinueWith((result) =>
+                {
+
+                    var spResult = result.Result;
+                    if (Convert.ToDecimal(id.Value) > 1)
+                    {
+                        res.ID = Convert.ToDecimal(id.Value);
+                    }
+                });
+
+                await db.SaveChangesAsync();
+            }
+            catch (AggregateException ex)
+            {
+                var excep = ex.Message;
+            }
+            catch (DbUpdateException)
+            {
+
+                if (ReservationExists(res.ID))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            var reservation = new Reservation()
+            {
+                Name = res.Name,
+                Phone = res.Phone,
+                Comments =  res.Comment,
+                Email =  res.Email,
+                Guests = res.Guests,
+                Time = res.Time,
+                Date = res.Date,
+                Active = "Y",
+                InsertDateTime = DateTime.Now,
+                InsertProcess = "Irfan",
+                InsertUser = "Irfan",
+                ID = res.ID
+            };
+
+            return CreatedAtRoute("DefaultApi", new { controller = "Reservations", id = res.ID }, reservation);
+        }
         // DELETE: api/Reservations/5
         [ResponseType(typeof(Reservation))]
         public async Task<IHttpActionResult> DeleteReservation(decimal id)

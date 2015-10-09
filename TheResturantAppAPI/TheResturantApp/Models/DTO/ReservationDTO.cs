@@ -8,7 +8,7 @@ namespace TheResturantApp.Models.DTO
 {
     public class ReservationDTO
     {
-        
+        public decimal ID { get; set; }
         public DateTime Date { get; set; }
         public string Time { get; set; }
         public int Guests { get; set; }
