@@ -21,6 +21,7 @@ namespace TheResturantApp.Controllers
         private TRAContext db = new TRAContext();
 
         // GET: api/Reservations
+        [Authorize]
         public IQueryable<ReservationDTO> GetReservations()
         {
             var reservation = (from d in db.Reservations
@@ -40,6 +41,7 @@ namespace TheResturantApp.Controllers
         }
 
         // GET: api/Reservations/00-000
+        [Authorize]
         [ResponseType(typeof(ReservationDTO))]
         public async Task<IHttpActionResult> GetReservation(string phone)
         {
@@ -63,6 +65,7 @@ namespace TheResturantApp.Controllers
         }
 
         // PUT: api/Reservations/5
+        [Authorize]
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutReservation(decimal id, Reservation reservation)
         {
@@ -98,6 +101,7 @@ namespace TheResturantApp.Controllers
         }
 
         // POST: api/Reservations
+        [Authorize]
         [ResponseType(typeof(Reservation))]
         public async Task<IHttpActionResult> PostReservation(Reservation res)
         {
@@ -154,8 +158,9 @@ namespace TheResturantApp.Controllers
         }
 
 
-          // POST: api/ReservationsDTO
+        // POST: api/ReservationsDTO
         //http://localhost:32661/api/ReservationDTO
+        [Authorize]
         [Route("api/ReservationDTO")]
         [ResponseType(typeof(ReservationDTO))]
         public async Task<IHttpActionResult> PostReservationDTO(ReservationDTO res)
@@ -226,6 +231,7 @@ namespace TheResturantApp.Controllers
             return CreatedAtRoute("DefaultApi", new { controller = "Reservations", id = res.ID }, reservation);
         }
         // DELETE: api/Reservations/5
+        [Authorize]
         [ResponseType(typeof(Reservation))]
         public async Task<IHttpActionResult> DeleteReservation(decimal id)
         {
