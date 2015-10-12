@@ -70,3 +70,5 @@ C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\bin\Microsoft.Owi
 C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\bin\System.Web.Http.Owin.xml
 C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Release\TheResturantApp.Migrations.user_model.resources
+C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Release\TheResturantApp.Migrations.addentityOrderMenuCOlumns.resources
+C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Release\TheResturantApp.Migrations.removedforiegnCustomerReference.resources

@@ -1,3 +1,4 @@
+
 IF OBJECT_ID ( 'dbp_resto_add_order', 'P' ) IS NOT NULL 
     DROP PROCEDURE dbp_resto_add_order ;
 GO
@@ -15,23 +16,31 @@ CREATE PROCEDURE dbp_resto_add_order
 AS 
 SET NOCOUNT ON;
 
-
- --DECLARE @pv_order_name		VARCHAR(50),
-	--	 @pv_customer_id	NUMERIC(18),
-	--	 @pv_order_date		DATETIME,
-	--	 @pv_required_date	DATETIME,
-	--	 @pv_menu_id		NUMERIC(18),
-	--	 @pv_unit_price		MONEY,
-	--	 @pv_quantity		NUMERIC(18),
-	--	 @pv_comments		VARCHAR(MAX)
-
 DECLARE @pv_insert_datetime DATETIME,
 		@pv_insert_user		VARCHAR(20),
-		@pv_insert_process	VARCHAR(20)
+		@pv_insert_process	VARCHAR(20),
+		@d_today			DATETIME
+		
 
 SELECT	@pv_insert_datetime = GETDATE(),
 		@pv_insert_user = HOST_NAME(),
-		@pv_insert_process = 'WEBAPI'
+		@pv_insert_process = 'WEBAPI',
+		@d_today = DATEADD(DD, DATEDIFF(DD,0,GETDATE()),0)
+
+IF NOT EXISTS (SELECT 'x' FROM dbo.menu m WHERE m.menu_id = @pv_menu_id)
+BEGIN
+Raiserror('No Menu Exists',16,1) return;
+END
+
+IF NOT EXISTS (SELECT 'x' FROM dbo.customer c  WHERE c.customer_id = @pv_customer_id)
+BEGIN
+Raiserror('No Customer Exists',16,1) return;
+END
+
+IF ((DATEDIFF(DD,@d_today,@pv_order_date) < 0) OR (DATEDIFF(DD,@d_today,@pv_required_date) < 0))
+BEGIN
+Raiserror('Date order is in the past cannot be accepted.',16,1) return;
+END
 
  INSERT INTO orders 
  (		order_name,
@@ -69,7 +78,7 @@ BEGIN TRAN
 DECLARE @pn_outId NUMERIC(18),
 	    @d_date DATETIME = GETDATE()
 
-EXEC dbo.dbp_resto_add_order @pv_order_name = 'Irfan',
+EXEC dbp_resto_add_order @pv_order_name = 'Irfan',
 							@pv_customer_id= 	2,
 							@pv_order_date =  @d_date ,
 							@pv_required_date=  @d_date,

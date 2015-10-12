@@ -4,7 +4,7 @@
 -- 2.  Define the column names and additional columns
 -- 3.  Save as new file according to Agility Convention E.g. 00010_AGL-101_RC_TABLE_utl_temp_table.sql
 ---------------------------------------------------------------------------------------------------------------
-
+--- DROP TABLE orders
 -- The following applies if you want to create a table from scratch
 IF NOT EXISTS(SELECT *
                 FROM sys.objects
