@@ -24,6 +24,9 @@ namespace TheResturantApp.Models.Mapping
             this.Property(t => t.MenuTypeId).HasColumnName("menu_type_id");
             this.Property(t => t.CategoryId).HasColumnName("menu_category_id");
             this.Property(t => t.Price).HasColumnName("menu_price");
+            this.Property(t => t.ThumbUrl).HasColumnName("thumb_url");
+            this.Property(t => t.LargeUrl).HasColumnName("large_url");
+            this.Property(t => t.SmallUrl).HasColumnName("small_url");
 
             this.Property(t => t.Active).HasColumnName("active");
             this.Property(t => t.InsertDateTime).HasColumnName("insert_datetime");

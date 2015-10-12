@@ -20,6 +20,11 @@ namespace TheResturantApp.Models
 
         [Column]
         public decimal Price { get; set; }
-        
+        [Column]
+        public string ThumbUrl { get; set; }
+        [Column]
+        public string LargeUrl { get; set; }
+        [Column]
+        public string SmallUrl { get; set; }
     }
 }

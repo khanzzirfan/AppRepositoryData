@@ -205,6 +205,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="CommonResource\DataReaderHelper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\DOrdersController.cs" />
@@ -246,6 +247,14 @@
     <Compile Include="Migrations\201510090416281_user_model.cs" />
     <Compile Include="Migrations\201510090416281_user_model.Designer.cs">
       <DependentUpon>201510090416281_user_model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510120533279_addentityOrderMenuCOlumns.cs" />
+    <Compile Include="Migrations\201510120533279_addentityOrderMenuCOlumns.Designer.cs">
+      <DependentUpon>201510120533279_addentityOrderMenuCOlumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510121023304_removedforiegnCustomerReference.cs" />
+    <Compile Include="Migrations\201510121023304_removedforiegnCustomerReference.Designer.cs">
+      <DependentUpon>201510121023304_removedforiegnCustomerReference.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AuditFields.cs" />
@@ -364,6 +373,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510090416281_user_model.resx">
       <DependentUpon>201510090416281_user_model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510120533279_addentityOrderMenuCOlumns.resx">
+      <DependentUpon>201510120533279_addentityOrderMenuCOlumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510121023304_removedforiegnCustomerReference.resx">
+      <DependentUpon>201510121023304_removedforiegnCustomerReference.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

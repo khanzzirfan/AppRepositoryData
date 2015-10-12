@@ -1,9 +1,14 @@
 namespace TheResturantApp.Migrations
 {
+    using Microsoft.AspNet.Identity;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using System.Threading.Tasks;
+    using TheResturantApp.Models;
+    using Microsoft.AspNet.Identity.EntityFramework;
+
 
     internal sealed class Configuration : DbMigrationsConfiguration<TheResturantApp.Models.TRAContext>
     {
@@ -14,18 +19,19 @@ namespace TheResturantApp.Migrations
 
         protected override void Seed(TheResturantApp.Models.TRAContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            Console.WriteLine("Executing Add User Method");
+            var username = "Irfank";
+            var manager = new UserManager<IdentityUser>(new UserStore<IdentityUser>(new TRAContext()));
+            var userlogin = new IdentityUser()
+            {
+                UserName = username,
+            };
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            var userExists = context.Users.Any(c => c.UserName == username);
+
+            if(!userExists)
+                manager.Create(userlogin, "Green0987");
+
         }
     }
 }

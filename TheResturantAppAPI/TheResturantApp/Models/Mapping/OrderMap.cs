@@ -26,7 +26,10 @@ namespace TheResturantApp.Models.Mapping
             this.Property(t => t.CustomerId).HasColumnName("order_complete");
             this.Property(t => t.CustomerId).HasColumnName("comments");
             this.Property(t => t.CustomerId).HasColumnName("order_discount");
-
+            this.Property(t => t.IsInvoiced).HasColumnName("is_invoiced");
+            this.Property(t => t.MenuId).HasColumnName("menu_id");
+            this.Property(t => t.UnitPrice).HasColumnName("unit_price");
+            this.Property(t => t.Quantity).HasColumnName("quantity");
 
 
             this.Property(t => t.TotalAmount).HasColumnName("order_total_amount");

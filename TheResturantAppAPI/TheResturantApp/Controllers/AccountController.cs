@@ -30,6 +30,8 @@ namespace TheResturantApp.Controllers
                 return BadRequest(ModelState);
             }
 
+            //Needs to comment out for not creating users at the moment;
+            /**
             IdentityResult result = await _repo.RegisterUser(userModel);
 
             IHttpActionResult errorResult = GetErrorResult(result);
@@ -38,6 +40,7 @@ namespace TheResturantApp.Controllers
             {
                 return errorResult;
             }
+            ***/
 
             return Ok();
         }

@@ -19,7 +19,6 @@ namespace TheResturantApp.Models
         
         [Column]
         public int CustomerId { get; set; }
-        public virtual Customer Customer { get; set; }
 
         [Column]
         public Nullable<DateTime> OrderDate { get; set; }
@@ -42,5 +41,19 @@ namespace TheResturantApp.Models
 
         [Column, MaxLength(500)]
         public string Comments { get; set; }
+
+        [Column, MaxLength(1)]
+        public string IsInvoiced { get; set; }
+        [Column]
+        public decimal MenuId { get; set; }
+
+        [Column]
+        public decimal UnitPrice { get; set; }
+
+        [Column]
+        public int Quantity { get; set; }
+
+
+
     }
 }
