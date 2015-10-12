@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2013 for Web
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheResturantApp", "TheResturantApp\TheResturantApp.csproj", "{93A23A5A-8E8A-41C5-85E4-4F06DA25218E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestSharpClient", "RestSharpClient\RestSharpClient.csproj", "{6DFC3CE5-AB21-44E5-82FB-3B871559D79F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{93A23A5A-8E8A-41C5-85E4-4F06DA25218E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93A23A5A-8E8A-41C5-85E4-4F06DA25218E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93A23A5A-8E8A-41C5-85E4-4F06DA25218E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DFC3CE5-AB21-44E5-82FB-3B871559D79F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DFC3CE5-AB21-44E5-82FB-3B871559D79F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DFC3CE5-AB21-44E5-82FB-3B871559D79F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DFC3CE5-AB21-44E5-82FB-3B871559D79F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

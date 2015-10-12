@@ -1,0 +1,210 @@
+﻿@section scripts {
+    @Scripts.Render("~/bundles/app")
+    @Scripts.Render("~/bundles/UI")
+}
+
+<div class="page-header">
+    <h1>Resturant App Service</h1>
+</div>
+<!-- Menu Bar-->
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">Services </a>
+    </div>
+    <div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Order</a></li>
+            <li><a href="#">Customers</a></li>
+            <li><a href="#">Menus</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="row" id="home">
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Customers</h2>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-unstyled" data-bind="foreach: customers">
+                        <li>
+                            <strong><span data-bind="text: Name"></span></strong>: <span data-bind="text: Phone"></span>
+                            <small><a href="#" data-bind="click: $parent.getCustomerDetail">Details</a></small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="alert alert-danger" data-bind="visible: error"><p data-bind="text: error"></p></div>
+        </div>
+
+        <!-- ko if:detail() -->
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Detail</h2>
+                </div>
+                <table class="table">
+                    <tr><td>Name</td><td data-bind="text: detail().Name"></td></tr>
+                    <tr><td>Phone</td><td data-bind="text: detail().Phone"></td></tr>
+                    <tr><td>Insert Datetime</td><td data-bind="text: detail().InsertDateTime"></td></tr>
+                    <tr><td>InsertProcess</td><td data-bind="text: detail().InsertProcess"></td></tr>
+                    <tr><td>InsertUser</td><td data-bind="text: detail().InsertUser"></td></tr>
+
+                </table>
+
+            </div>
+        </div>
+        <!-- /ko -->
+
+        <div class="col-md-4">
+            <!-- TODO: Add New Data -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Add New Customer</h2>
+                </div>
+
+                <!-- Add: Fields Seperately-->
+                <div class="panel-body">
+                    <form class="form-horizontal" data-bind="submit: addCustomer">
+
+                        <div class="form-group" data-bind="with: newCustomer">
+                            <label for="inputTitle" class="col-sm-2 control-label">Name</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="inputName" data-bind="value:Name" placeholder="Name    " />
+                            </div>
+                            <label for="inputYear" class="col-sm-2 control-label">Phone</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="inputPhone" data-bind="value:Phone" placeholder="000-00000" />
+                            </div>
+                            <label for="custInsertDateTime" class="col-sm-2 control-label">Date</label>
+                            <div class="col-sm-12">
+                                <input type="datetime" class="form-control" id="custInsertDateTime" data-bind="value:InsertDateTime" placeholder="DateTime" />
+                            </div>
+                            <label for="custInsertProcess" class="col-sm-2 control-label">Process</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="custInsertProcess" data-bind="value:InsertProcess" placeholder="Initial Record" />
+                            </div>
+                            <label for="custInsertUser" class="col-sm-2 control-label">User</label>
+                            <div class="col-sm-12">
+                                <input type="text" step="any" class="form-control" id="custInsertUser" data-bind="value:InsertUser" placeholder="ByUser" />
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="row" id="order">
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Orders</h2>
+            </div>
+            <div class="panel-body">
+                <ul class="list-unstyled" data-bind="foreach: orders">
+                    <li>
+                        <strong><span>OrderID</span></strong>: <span data-bind="text: Id"></span>
+                        @*<small><a href="#" data-bind="click: $parent.getCustomerDetail">Details</a></small>*@
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="alert alert-danger" data-bind="visible: error"><p data-bind="text: error"></p></div>
+    </div>
+
+    <!-- ko if:detail() -->
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Orders</h2>
+            </div>
+            <table class="table">
+                <tr><td>Order Id</td><td data-bind="text: orderdetail().Id"></td></tr>
+                <tr><td>Customer Id</td><td data-bind="text: orderdetail().CustomerId"></td></tr>
+                <tr><td>Total Amount</td><td data-bind="text: orderdetail().TotalAmount"></td></tr>
+                <tr><td>Tax Amount</td><td data-bind="text: orderdetail().TaxAmount"></td></tr>
+                <tr><td>Net Amount</td><td data-bind="text: orderdetail().NetAmount"></td></tr>
+                <tr><td>Comments</td><td data-bind="text: orderdetail().Comments"></td></tr>
+                
+                <tr><td>Date</td><td data-bind="text: orderdetail().InsertDateTime"></td></tr>
+                <tr><td>Insert Process</td><td data-bind="text: orderdetail().InsertProcess"></td></tr>
+                <tr><td>Insert User</td><td data-bind="text: orderdetail().InsertUser"></td></tr>
+            </table>
+        </div>
+    </div>
+    <!-- /ko -->
+
+    <div class="col-md-4">
+        <!-- TODO: Add New Data -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Add New Order</h2>
+            </div>
+
+            <!-- Add: Fields Seperately-->
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="form-horizontal" data-bind="submit: addOrder">
+
+                            <div class="form-group">
+                                <label for="inputCustomerOrder" class="col-sm-2 control-label">Customer</label>
+                                <div class="col-sm-offset-2 col-sm-8">
+                                    <select class="form-control" data-bind="options:customers, optionsText: 'Name', value: newOrder.Customer"></select>
+                                </div>
+                            </div>
+
+                            <div class="form-group" data-bind="with: newOrder">
+                                <label for="inputTotalAmount" class="col-sm-6 control-label">Total Amount</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="inputTotalAmount" data-bind="value:TotalAmount" placeholder="$0.00" />
+                                </div>
+
+                                <label for="inputTaxAmount" class="col-sm-6  control-label text-left">Tax</label>
+                                <div class="col-sm-6 ">
+                                    <input type="text" class="form-control" id="inputTaxAmount" data-bind="value:TaxAmount" placeholder="$0.00" />
+                                </div>
+                                <label for="inputNetAmount" class="col-sm-6  control-label">Net</label>
+                                <div class="col-sm-6 ">
+                                    <input type="datetime" class="form-control" id="inputNetAmount" data-bind="value:NetAmount" placeholder="$0.00" />
+                                </div>
+                                <label for="inputComments" class="col-sm-6 control-label">Comments</label>
+                                <div class="col-sm-6 ">
+                                    <input type="text" class="form-control" id="inputComments" data-bind="value:Comments" placeholder="Any Comments" />
+                                </div>
+                                
+                                <label for="orderInsertDateTime" class="col-sm-6 control-label">Date</label>
+                                <div class="col-sm-6">
+                                    <input type="datetime" class="form-control" id="orderInsertDateTime" data-bind="value:InsertDateTime" placeholder="DateTime" />
+                                </div>
+                                <label for="orderInsertProcess" class="col-sm-6 control-label">Process</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="orderInsertProcess" data-bind="value:InsertProcess" placeholder="Initial Record" />
+                                </div>
+                                <label for="orderInsertUser" class="col-sm-6 control-label">User</label>
+                                <div class="col-sm-6">
+                                    <input type="text" step="any" class="form-control" id="orderInsertUser" data-bind="value:InsertUser" placeholder="ByUser" />
+                                </div>
+
+                                
+
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div>

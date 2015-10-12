@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="httpdocs/WApp" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Github\\AppRepositoryData\\TheResturantAppAPI\\TheResturantApp\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Github\\AppRepositoryData\\TheResturantAppAPI\\TheResturantApp\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="TheResturantAppContext-Web.config Connection String" description="" value="Data Source=(localdb)\v11.0; Initial Catalog=TheResturantAppContext-20150917162810; Integrated Security=True; MultipleActiveResultSets=True; AttachDbFilename=|DataDirectory|TheResturantAppContext-20150917162810.mdf" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Github\\AppRepositoryData\\TheResturantAppAPI\\TheResturantApp\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TheResturantAppContext']/@connectionString" />
+  </parameter>
+  <parameter name="TRAContext-Web.config Connection String" description="" value="Data Source=184.168.47.13; Initial Catalog=TBHIK; Persist Security Info=True; MultipleActiveResultSets=True; User ID=irfank;Password=Nidha789;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Github\\AppRepositoryData\\TheResturantAppAPI\\TheResturantApp\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TRAContext']/@connectionString" />
+  </parameter>
+  <parameter name="TRAContextabcd-Web.config Connection String" description="" value="Data Source=(local);Initial Catalog=resturant;Integrated Security=True;Persist Security Info=True; MultipleActiveResultSets=True;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Github\\AppRepositoryData\\TheResturantAppAPI\\TheResturantApp\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TRAContextabcd']/@connectionString" />
+  </parameter>
+</parameters>
