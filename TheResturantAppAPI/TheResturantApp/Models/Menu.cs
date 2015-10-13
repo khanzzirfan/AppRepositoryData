@@ -12,12 +12,8 @@ namespace TheResturantApp.Models
         public string Description { get; set; }
         [Column]
         public decimal MenuTypeId { get; set; }
-        public virtual MenuType MenuType { get; set; }
-
         [Column]
         public decimal CategoryId { get; set; }
-        public virtual MenuCategory MenuCategory { get;set;}
-
         [Column]
         public decimal Price { get; set; }
         [Column]

@@ -16,7 +16,7 @@ using TheResturantApp.Models;
 
 namespace TheResturantApp.Controllers
 {
-    [System.Web.Http.RoutePrefix("api/Orders")]
+    [RoutePrefix("api/Orders")]
     public class OrdersController : ApiController
     {
         private TRAContext db = new TRAContext();

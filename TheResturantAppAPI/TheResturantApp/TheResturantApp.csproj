@@ -210,6 +210,7 @@
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\DOrdersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MenusController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ReservationsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -256,10 +257,15 @@
     <Compile Include="Migrations\201510121023304_removedforiegnCustomerReference.Designer.cs">
       <DependentUpon>201510121023304_removedforiegnCustomerReference.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510130830276_removeforiegnkeyreference.cs" />
+    <Compile Include="Migrations\201510130830276_removeforiegnkeyreference.Designer.cs">
+      <DependentUpon>201510130830276_removeforiegnkeyreference.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AuditFields.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\DTO\CustomerDTO.cs" />
+    <Compile Include="Models\DTO\MenuDTO.cs" />
     <Compile Include="Models\DTO\ReservationDTO.cs" />
     <Compile Include="Models\Mapping\CustomerMap.cs" />
     <Compile Include="Models\Mapping\MenuCategoryMap.cs" />
@@ -379,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510121023304_removedforiegnCustomerReference.resx">
       <DependentUpon>201510121023304_removedforiegnCustomerReference.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510130830276_removeforiegnkeyreference.resx">
+      <DependentUpon>201510130830276_removeforiegnkeyreference.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
