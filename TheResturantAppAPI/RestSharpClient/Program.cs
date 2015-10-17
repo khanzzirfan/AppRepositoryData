@@ -12,8 +12,76 @@ namespace RestSharpClient
 {
    public  class Program
     {
+
+        public void GetReservations()
+        {
+            string phone = "0220778677";
+            const string BaseAddress = "http://khanzzirfan.com/WApp/";
+            var client = new RestClient(BaseAddress);
+            string accessToken = "";
+            var tokenRequest = new RestRequest("token", Method.POST);
+            tokenRequest.AddParameter("grant_type", "password");
+            tokenRequest.AddParameter("username", "irfank");
+            tokenRequest.AddParameter("password", "Green0987");
+
+            Console.WriteLine("Call to access token");
+            var tokenResponse = client.Execute(tokenRequest);
+
+            if (tokenResponse.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                var datatoken = tokenResponse.Content;
+
+                var jObject = Newtonsoft.Json.Linq.JObject.Parse(datatoken);
+                var token = jObject.SelectToken("access_token");
+                accessToken = string.Format("Bearer {0}", token.ToString());
+                Console.WriteLine(accessToken);
+                Console.WriteLine(datatoken);
+
+            }
+            else
+            {
+                Console.WriteLine("Connection Failed");
+                return;
+            }
+
+            var request = new RestRequest(String.Format("api/Reservations?phone={0}", phone));
+            request.AddParameter("Authorization", accessToken, ParameterType.HttpHeader);
+
+            // execute the request
+            var response2 = client.Execute(request);
+            var content = response2.Content; // raw content as string
+            var jobject = JsonConvert.DeserializeObject<ReservationDTO>(response2.Content);
+           
+            //var jsonObject2 = JsonConvert.DeserializeObject<List<ReservationDTO>>(response2.Content);
+
+            client.ExecuteAsync(request, response => {
+
+                //Console.WriteLine(response.Content);
+
+                var jsonObject = JsonConvert.DeserializeObject<List<ReservationDTO>>(response.Content);
+                foreach (var item in jsonObject)
+                {
+                    Console.WriteLine(item.Name);
+                }
+            });
+
+        }
+
         static void Main(string[] args)
         {
+
+            Program p = new Program();
+            // p.GetReservations();
+            var date = new DateTime(2015, 10, 5);
+            var currentDate = DateTime.Now;
+            var timeDiff = (date - currentDate);
+            Console.WriteLine(string.Format("time differece {0} ", timeDiff));
+            Console.WriteLine(string.Format("In {0:00} Days : {1}hrs : {2}mins", timeDiff.Days, timeDiff.Hours, timeDiff.Minutes));
+            Console.WriteLine(string.Format("In {0}", currentDate.ToString("MMM")));
+
+
+
+            /***
             const string BaseAddress = "http://khanzzirfan.com/WApp/";
             var client = new RestClient(BaseAddress);
             var request = new RestRequest(String.Format("api/Reservations"));
@@ -113,6 +181,9 @@ namespace RestSharpClient
 
             //End of Main
             Console.ReadLine();
+    ********/
+
+
         }
     }
 }
