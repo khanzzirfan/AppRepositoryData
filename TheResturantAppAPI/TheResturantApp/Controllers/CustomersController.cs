@@ -65,7 +65,7 @@ namespace TheResturantApp.Controllers
                     InsertProcess = b.InsertProcess,
                     InsertUser = b.InsertUser
 
-                }).SingleOrDefaultAsync(b => b.CustomerId == id);
+                }).FirstOrDefaultAsync(b => b.CustomerId == id);
 
             if (customer == null)
             {

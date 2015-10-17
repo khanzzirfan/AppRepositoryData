@@ -35,10 +35,19 @@ namespace TheResturantApp.Controllers
                                   Name = d.Name,
                                   Phone = d.Phone
                               });
-           
 
             return reservation;
         }
+
+        //GET: api/getreservationbyphone
+        [Authorize]
+        [Route("api/getreservationbyphone")]
+        public async Task<IEnumerable<ReservationDTO>> GetReservations(string phone)
+        {
+            var list = await GetReservationList(phone, 5);
+            return list;
+        }
+
 
         // GET: api/Reservations/00-000
         [Authorize]
@@ -54,7 +63,7 @@ namespace TheResturantApp.Controllers
                 Phone = c.Phone,
                 Guests = c.Guests,
                 Comment = c.Comments
-            }).SingleOrDefaultAsync(b => b.Phone == phone);
+            }).FirstOrDefaultAsync(b => b.Phone == phone);
 
             if (reservation == null)
             {
@@ -64,6 +73,8 @@ namespace TheResturantApp.Controllers
             return Ok(reservation);
         }
 
+        #region PUT/Post
+        
         // PUT: api/Reservations/5
         [Authorize]
         [ResponseType(typeof(void))]
@@ -99,6 +110,8 @@ namespace TheResturantApp.Controllers
 
             return StatusCode(HttpStatusCode.NoContent);
         }
+        
+
 
         // POST: api/Reservations
         [Authorize]
@@ -156,8 +169,9 @@ namespace TheResturantApp.Controllers
 
             return CreatedAtRoute("DefaultApi", new { id = res.ID }, res);
         }
+        #endregion
 
-
+        
         // POST: api/ReservationsDTO
         //http://localhost:32661/api/ReservationDTO
         [Authorize]
@@ -228,8 +242,10 @@ namespace TheResturantApp.Controllers
                 ID = res.ID
             };
 
+            //var reservationlist = await GetReservationList(res.Phone, 5);
             return CreatedAtRoute("DefaultApi", new { controller = "Reservations", id = res.ID }, reservation);
         }
+        
         // DELETE: api/Reservations/5
         [Authorize]
         [ResponseType(typeof(Reservation))]
@@ -246,6 +262,30 @@ namespace TheResturantApp.Controllers
 
             return Ok(reservation);
         }
+
+        #region HelperMethods
+        private async Task<IEnumerable<ReservationDTO>> GetReservationList(string phone, int noOfRows = 5)
+        {
+            var reservation = await db.Reservations
+                .Where(c => c.Phone == phone)
+                .OrderByDescending(c => c.Date)
+                .Select(c => new ReservationDTO()
+                {
+                    Time = c.Time,
+                    Date = c.Date,
+                    Name = c.Name,
+                    Email = c.Email,
+                    Phone = c.Phone,
+                    Guests = c.Guests,
+                    Comment = c.Comments
+                }).Take(noOfRows).ToListAsync();
+
+            return reservation;
+        }
+
+        #endregion
+
+
 
         protected override void Dispose(bool disposing)
         {
