@@ -212,6 +212,7 @@ namespace TheResturantApp.Controllers
             catch (AggregateException ex)
             {
                 var excep = ex.Message;
+                throw new ApplicationException(ex.Message);
             }
             catch (DbUpdateException)
             {

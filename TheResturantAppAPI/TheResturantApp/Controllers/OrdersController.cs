@@ -119,7 +119,7 @@ namespace TheResturantApp.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-
+        [Authorize]
         [Route("placeorderitems")]
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PostOrderItems(OrderDetailDTO order)
