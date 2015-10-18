@@ -22,6 +22,7 @@ namespace TheResturantApp.Models
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Menu> Menus { get; set; }
         public DbSet<MenuType> MenuTypes { get; set; }
+        public DbSet<Transactions> Transactions { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

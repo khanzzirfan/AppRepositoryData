@@ -19,12 +19,15 @@ namespace TheResturantApp.Models.Mapping
             this.Property(t => t.ID).HasColumnName("transaction_id");
 
             this.Property(t => t.OrderID).HasColumnName("order_id");
-            this.Property(t => t.MenuID).HasColumnName("order_menu_id");
+            this.Property(t => t.MenuID).HasColumnName("menu_id");
             this.Property(t => t.UnitPrice).HasColumnName("unit_price");
 
             this.Property(t => t.Quantity).HasColumnName("quantity");
             this.Property(t => t.Discount).HasColumnName("discount");
-            this.Property(t => t.OrderAmount).HasColumnName("order_amount");
+            this.Property(t => t.OrderAmount).HasColumnName("amount");
+            this.Property(t => t.PricePlanId).HasColumnName("price_plan_id");
+            this.Property(t => t.Comments).HasColumnName("Comments");
+
 
             //Audit Fields always
             this.Property(t => t.Active).HasColumnName("active");

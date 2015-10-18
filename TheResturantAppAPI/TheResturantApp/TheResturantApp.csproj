@@ -206,6 +206,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="CommonResource\DataReaderHelper.cs" />
+    <Compile Include="CommonResource\XMLHelper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\DOrdersController.cs" />
@@ -260,6 +261,10 @@
     <Compile Include="Migrations\201510130830276_removeforiegnkeyreference.cs" />
     <Compile Include="Migrations\201510130830276_removeforiegnkeyreference.Designer.cs">
       <DependentUpon>201510130830276_removeforiegnkeyreference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510172305342_OrderTransactions.cs" />
+    <Compile Include="Migrations\201510172305342_OrderTransactions.Designer.cs">
+      <DependentUpon>201510172305342_OrderTransactions.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AuditFields.cs" />
@@ -388,6 +393,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510130830276_removeforiegnkeyreference.resx">
       <DependentUpon>201510130830276_removeforiegnkeyreference.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510172305342_OrderTransactions.resx">
+      <DependentUpon>201510172305342_OrderTransactions.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

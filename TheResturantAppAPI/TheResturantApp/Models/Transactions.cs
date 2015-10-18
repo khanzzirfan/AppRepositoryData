@@ -18,5 +18,12 @@ namespace TheResturantApp.Models
         [Column]
         public decimal OrderAmount { get; set; }
 
+        [Column]
+        public decimal PricePlanId { get; set; }
+
+        [Column, MaxLength(200)]
+        public string Comments { get; set; }
+
+
     }
 }

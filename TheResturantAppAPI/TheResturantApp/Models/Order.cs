@@ -36,24 +36,11 @@ namespace TheResturantApp.Models
         [Column]
         public decimal TaxAmount { get; set; }
         
-        [Column]
-        public decimal NetAmount { get; set; }
-
         [Column, MaxLength(500)]
         public string Comments { get; set; }
 
         [Column, MaxLength(1)]
         public string IsInvoiced { get; set; }
-        [Column]
-        public decimal MenuId { get; set; }
-
-        [Column]
-        public decimal UnitPrice { get; set; }
-
-        [Column]
-        public int Quantity { get; set; }
-
-
 
     }
 }

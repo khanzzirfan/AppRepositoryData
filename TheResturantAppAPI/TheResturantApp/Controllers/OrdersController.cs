@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -118,6 +119,48 @@ namespace TheResturantApp.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+
+        [Route("placeorderitems")]
+        [ResponseType(typeof(void))]
+        public async Task<IHttpActionResult> PostOrderItems(OrderDetailDTO order)
+        {
+            try
+            {
+                var orderId = 0;
+                var jsonString = JsonConvert.SerializeObject(order);
+                if (!string.IsNullOrEmpty(jsonString))
+                {
+                    var pJsonString = new SqlParameter("@pv_json_order", jsonString);
+                    var orderIdParameter = new SqlParameter();
+                    orderIdParameter.ParameterName = "@pn_output_id";
+                    orderIdParameter.Direction = ParameterDirection.Output;
+                    orderIdParameter.SqlDbType = SqlDbType.Int;
+
+                    await db.Database.ExecuteSqlCommandAsync("EXEC dbp_resto_add_json_order @pv_json_order, @pn_output_id OUTPUT", pJsonString, orderIdParameter).ContinueWith((result) =>
+                    {
+                        var res = result.Result;
+
+                        if (Convert.ToInt32(orderIdParameter.Value) > 1)
+                        {
+                            orderId = Convert.ToInt32(orderIdParameter.Value);
+                        }
+                    });
+                }
+
+                if (orderId < 1)
+                {
+                    return StatusCode(HttpStatusCode.BadRequest);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+            
+            return StatusCode(HttpStatusCode.OK);
+        }
+
         // POST: api/Orders
         [Authorize]
         [ResponseType(typeof(Order))]
@@ -135,10 +178,10 @@ namespace TheResturantApp.Controllers
             var pCustId = new SqlParameter("@pv_customer_id", order.CustomerId);
             var pDate = new SqlParameter("@pv_order_date", order.OrderDate);
             var prequiredDate = new SqlParameter("@pv_required_date", order.RequiredDate);
-            var pMenuId = new SqlParameter("@pv_menu_id", order.MenuId);
 
-            var pPrice = new SqlParameter("@pv_unit_price", order.UnitPrice);
-            var pQuantity = new SqlParameter("@pv_quantity", order.Quantity);
+            //var pMenuId = new SqlParameter("@pv_menu_id", order.MenuId);
+            //var pPrice = new SqlParameter("@pv_unit_price", order.UnitPrice);
+            //var pQuantity = new SqlParameter("@pv_quantity", order.Quantity);
             var pComments = new SqlParameter("@pv_comments", order.Comments);
             
 
@@ -149,15 +192,15 @@ namespace TheResturantApp.Controllers
 
             try
             {
-                await db.Database.ExecuteSqlCommandAsync("EXEC dbp_resto_add_order @pv_order_name, @pv_customer_id, @pv_order_date,@pv_required_date, @pv_menu_id,@pv_unit_price, @pv_quantity, @pv_comments, @pn_output_id OUTPUT", pName, pCustId, pDate, prequiredDate, pMenuId, pPrice, pQuantity, pComments, orderIdParameter).ContinueWith((result) =>
-                {
-                    var res = result.Result;
+                //await db.Database.ExecuteSqlCommandAsync("EXEC dbp_resto_add_order @pv_order_name, @pv_customer_id, @pv_order_date,@pv_required_date, @pv_menu_id,@pv_unit_price, @pv_quantity, @pv_comments, @pn_output_id OUTPUT", pName, pCustId, pDate, prequiredDate, pMenuId, pPrice, pQuantity, pComments, orderIdParameter).ContinueWith((result) =>
+                //{
+                //    var res = result.Result;
 
-                    if (Convert.ToInt32(orderIdParameter.Value) > 1)
-                    {
-                        order.ID = Convert.ToInt32(orderIdParameter.Value);
-                    }
-                });
+                //    if (Convert.ToInt32(orderIdParameter.Value) > 1)
+                //    {
+                //        order.ID = Convert.ToInt32(orderIdParameter.Value);
+                //    }
+                //});
             }
             catch (Exception ex)
             {
