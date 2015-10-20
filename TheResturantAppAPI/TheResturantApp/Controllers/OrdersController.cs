@@ -139,9 +139,7 @@ namespace TheResturantApp.Controllers
 
             return Ok(orderdto);
         }
-
-
-
+        
         // PUT: api/Orders/5
         [Authorize]
         [ResponseType(typeof(void))]
