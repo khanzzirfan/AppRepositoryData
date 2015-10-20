@@ -270,13 +270,36 @@ namespace CoreRepository
 									   od.Quantity,
 									   od.Price,
 										od.TotalAmount,
-										od.Id AS OrderDetailId 
+										od.Id AS OrderDetailId,
+										 m.Id as MenuID
 								  FROM Menu m
 								  JOIN OrderDetails od	 ON m.Id = od.MenuID ";
 			var dto = database.Query<OrderDetailDTO> (selectQuery);
 			return dto;
 		}
 
+		/// <summary>
+		/// Clears all orders from the bucket.
+		/// </summary>
+		/// <returns>The all orders.</returns>
+		public int ClearAllOrders()
+		{
+			var OD = GetItems<OrderDetails>();
+			foreach (var d in OD) {
+				DeleteItem<OrderDetails> (d);
+			}
+
+			var orders = GetItems<Orders> ();
+			foreach (var d in orders) {
+				DeleteItem<Orders> (d);
+			}
+
+			var baseOrder = GetItems<BaseOrder> ();
+			foreach (var d in baseOrder) {
+				DeleteItem<BaseOrder> (d);
+			}
+			return 1;
+		}
 
     }
 }

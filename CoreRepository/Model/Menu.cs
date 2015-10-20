@@ -9,6 +9,7 @@ namespace CoreRepository
 
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
+		public decimal MenuID { get; set;}
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
