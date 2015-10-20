@@ -44,6 +44,65 @@ namespace TheResturantApp.Controllers
         }
 
         [Authorize]
+        [Route("getrecentorders")]
+        [ResponseType(typeof(OrderDetailDTO))]
+        public async Task<IHttpActionResult> GetRecentOrders(string orderType, string orderValue)
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["TRAContext"].ConnectionString;
+            SqlDataReader reader = null;
+            var orderdto = new List<OrderDetailDTO>();
+            using (var connection = new SqlConnection(connectionString))
+            {
+                var cmd = new SqlCommand("dbp_get_recent_orders", connection);
+                connection.Open();
+                try
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@pv_order_by", orderType));
+                    cmd.Parameters.Add(new SqlParameter("@pv_value", orderValue));
+                    reader = cmd.ExecuteReader();
+                    var orderlist = new CommonResource.ReflectionPopulator<TempOrderDTO>().CreateList(reader);
+
+                    var dorderlist = orderlist.GroupBy(c => c.OrderId).Select(s => new OrderDetailDTO()
+                    {
+                        Comments = s.FirstOrDefault().Comments,
+                        CustomerId = s.FirstOrDefault().CustomerId,
+                        DateOrdered = s.FirstOrDefault().DateOrdered,
+                        DateRequired = s.FirstOrDefault().DateRequired,
+                        ID = s.FirstOrDefault().OrderId,
+                        IsInvoiced = s.FirstOrDefault().IsInvoiced,
+                        Name = s.FirstOrDefault().Name,
+                        OrderItems = s.Where(d => d.OrderId == s.Key).Select(m => new TransactionDTO()
+                        {
+                            MenuID = m.MenuID,
+                            MenuName = m.MenuName,
+                            Quantity = m.Quantity,
+                            UnitPrice = m.Quantity
+
+                        }).ToList(),
+                    }).ToList();
+
+
+                    orderdto = dorderlist;
+
+                }
+                catch (Exception ex)
+                {
+                    var message = ex.Message;
+                    throw;
+                }
+                finally
+                {
+                    if (reader != null)
+                    {
+                        reader.Close();
+                    }
+                }
+            }
+            return Ok(orderdto);
+        }
+
+        [Authorize]
         [Route("GetOrderDetails")]
         [ResponseType(typeof(OrderDTO))]
         public async Task<IHttpActionResult> GetOrdersDTO(string orderType, string orderValue)
@@ -192,15 +251,7 @@ namespace TheResturantApp.Controllers
 
             try
             {
-                //await db.Database.ExecuteSqlCommandAsync("EXEC dbp_resto_add_order @pv_order_name, @pv_customer_id, @pv_order_date,@pv_required_date, @pv_menu_id,@pv_unit_price, @pv_quantity, @pv_comments, @pn_output_id OUTPUT", pName, pCustId, pDate, prequiredDate, pMenuId, pPrice, pQuantity, pComments, orderIdParameter).ContinueWith((result) =>
-                //{
-                //    var res = result.Result;
-
-                //    if (Convert.ToInt32(orderIdParameter.Value) > 1)
-                //    {
-                //        order.ID = Convert.ToInt32(orderIdParameter.Value);
-                //    }
-                //});
+              
             }
             catch (Exception ex)
             {
