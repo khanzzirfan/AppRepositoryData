@@ -10,3 +10,15 @@ C:\Users\Irfan.Kahn\Documents\Projects\RestoCore\RestoCore\obj\Debug\RestoCore.c
 C:\Users\Irfan.Kahn\Documents\Projects\RestoCore\RestoCore\obj\Debug\RestoCore.dll
 C:\Users\Irfan.Kahn\Documents\Projects\RestoCore\RestoCore\obj\Debug\RestoCore.pdb
 C:\Users\Irfan.Kahn\Documents\Projects\RestoCore\RestoCore\bin\Debug\SQLite.dll
+C:\GitHub\AppRepositoryData\RestoCore\RestoCore\bin\Debug\RestoCore.dll
+C:\GitHub\AppRepositoryData\RestoCore\RestoCore\bin\Debug\RestoCore.pdb
+C:\GitHub\AppRepositoryData\RestoCore\RestoCore\bin\Debug\Connectivity.Plugin.Abstractions.dll
+C:\GitHub\AppRepositoryData\RestoCore\RestoCore\bin\Debug\Connectivity.Plugin.dll
+C:\GitHub\AppRepositoryData\RestoCore\RestoCore\bin\Debug\SQLite.dll
+C:\GitHub\AppRepositoryData\RestoCore\RestoCore\bin\Debug\Connectivity.Plugin.Abstractions.pdb
+C:\GitHub\AppRepositoryData\RestoCore\RestoCore\bin\Debug\Connectivity.Plugin.Abstractions.xml
+C:\GitHub\AppRepositoryData\RestoCore\RestoCore\bin\Debug\Connectivity.Plugin.pdb
+C:\GitHub\AppRepositoryData\RestoCore\RestoCore\bin\Debug\Connectivity.Plugin.xml
+C:\GitHub\AppRepositoryData\RestoCore\RestoCore\obj\Debug\RestoCore.csprojResolveAssemblyReference.cache
+C:\GitHub\AppRepositoryData\RestoCore\RestoCore\obj\Debug\RestoCore.dll
+C:\GitHub\AppRepositoryData\RestoCore\RestoCore\obj\Debug\RestoCore.pdb

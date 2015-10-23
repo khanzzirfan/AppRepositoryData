@@ -40,6 +40,8 @@
     <Compile Include="BL\Models\Menu.cs" />
     <Compile Include="BL\Models\OrderDetails.cs" />
     <Compile Include="BL\Models\Orders.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="AppRepository.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>

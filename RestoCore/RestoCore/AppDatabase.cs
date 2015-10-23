@@ -9,7 +9,7 @@ namespace RestoCore
 	public class AppDatabase
 	{
 		static object locker = new object();
-		protected static SQLiteConnection database;
+		protected SQLiteConnection database;
 		protected static string dbLocation;
 
 		public AppDatabase (SQLiteConnection conn, string path)
@@ -17,12 +17,26 @@ namespace RestoCore
 			database = conn;
 			dbLocation = path;
 			// create the tables
+			database.CreateTable<Customer>();
 			database.CreateTable<Menu>();
 			database.CreateTable<BaseOrder>();
 			database.CreateTable<Orders>();
 			database.CreateTable<OrderDetails>();
+
+			//Initialize Database Seed it;
+			SeedDatabase();
 		}
 
+		public void SeedDatabase()
+		{
+			//Register customer on App Startup;
+			var count = CountTable<Customer> ();
+			if (count < 1) {
+				var seed = new SampleSeedDB ();
+				var addcustomer = seed.AddCustomer ();
+				SaveItem(addcustomer);
+			}
+		}
 
 		public IEnumerable<T> GetItems<T>() where T : IBusinessEntity, new()
 		{
@@ -32,14 +46,14 @@ namespace RestoCore
 			}
 		}
 
-		public static T GetItem<T> (int id) where T : IBusinessEntity, new ()
+		public T GetItem<T> (int id) where T : IBusinessEntity, new ()
 		{
 			lock (locker) {
 				return database.Table<T>().FirstOrDefault(x => x.ID == id);
 			}
 		}
 
-		public static int SaveItem<T> (T item) where T : IBusinessEntity
+		public int SaveItem<T> (T item) where T : IBusinessEntity
 		{
 			lock (locker) {
 				if (item.ID != 0) {
@@ -56,7 +70,7 @@ namespace RestoCore
 		/// </summary>
 		/// <param name="items">Items.</param>
 		/// <typeparam name="T">The 1st type parameter.</typeparam>
-		public static void SaveItems<T> (IEnumerable<T> items) where T : IBusinessEntity
+		public void SaveItems<T> (IEnumerable<T> items) where T : IBusinessEntity
 		{
 			lock (locker) {
 				database.BeginTransaction ();
@@ -83,11 +97,12 @@ namespace RestoCore
 			}
 		}
 
+
 		/// <summary>
 		/// Clears the table. Clears All the T data
 		/// </summary>
 		/// <typeparam name="T">The 1st type parameter.</typeparam>
-		public static void ClearTable<T>() where T : IBusinessEntity, new ()
+		public void ClearTable<T>() where T : IBusinessEntity, new ()
 		{
 			lock (locker) {
 				database.Execute (string.Format ("delete from \"{0}\"", typeof (T).Name));
@@ -95,7 +110,7 @@ namespace RestoCore
 		}
 
 		// helper for checking if database has been populated
-		public static int CountTable<T>() where T : IBusinessEntity, new ()
+		public int CountTable<T>() where T : IBusinessEntity, new ()
 		{
 			lock (locker) {
 				string sql = string.Format ("select count (*) from \"{0}\"", typeof (T).Name);
@@ -105,8 +120,28 @@ namespace RestoCore
 		}
 
 
+		//This is not really needed. The Save item performs update or insert itself;
+		public int UpdateItem<T>(T item) where T : IBusinessEntity, new()
+		{
+			lock (locker)
+			{
+				database.Execute( string.Format ("DELETE FROM {0} WHERE ID = {1}", typeof(T).Name, item.ID));
+				SaveItem (item);
+				return 1;
+			}
+		}
+
+		/***************
+		 * There will be always one order in the orders table
+		 * So, Basically need only Order Detail Table
+		 * Keep inserting rows in to order Details
+		 * 
+		 *  * **********/
+
 		/** Custom Methods Implementation ****/
-		public static IEnumerable<Orders> GetOrderByBase(int id)
+
+
+		public IEnumerable<Orders> GetOrderByBase(int id)
 		{
 			lock (locker)
 			{
@@ -115,7 +150,7 @@ namespace RestoCore
 			}
 		}
 
-		public static IEnumerable<OrderDetails> GetOrderDetailsByOrder(int id)
+		public IEnumerable<OrderDetails> GetOrderDetailsByOrder(int id)
 		{
 			lock (locker)
 			{
@@ -123,8 +158,6 @@ namespace RestoCore
 					.Where(c => c.OrderID == id).ToList();
 			}
 		}
-
-
 
 	}
 }
