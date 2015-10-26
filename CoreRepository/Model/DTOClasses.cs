@@ -11,6 +11,15 @@ namespace CoreRepository
 		{
 		}
 	}
+	public class OrderDetailDTO
+	{
+		public int OrderDetailId { get; set; }
+		public string MenuName { get; set; }
+		public decimal Quantity { get; set; }
+		public decimal Price { get; set; }
+		public decimal TotalAmount { get; set; }
+		public int MenuID { get; set; }
+	}
 
 	public class ReservationDTO
 	{
@@ -22,12 +31,13 @@ namespace CoreRepository
 		public string Phone { get; set; }
 		public string Comment { get; set; }
 		public string Name { get; set; }
+		public string CustomerId { get; set; }
 	}
 
 	public class OrderDetailsDTO
 	{
 		public decimal ID { get; set; }
-		public decimal CustomerId { get; set; }
+		public string CustomerId { get; set; }
 		public string Name { get; set; }
 		public DateTime DateOrdered { get; set; }
 		public DateTime DateRequired { get; set; }

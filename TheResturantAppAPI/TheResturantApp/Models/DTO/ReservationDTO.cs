@@ -16,6 +16,7 @@ namespace TheResturantApp.Models.DTO
         public string Phone { get; set; }
         public string Comment { get; set; }
         public string Name { get; set; }
+        public string CustomerId { get; set; }
 
     }
 }

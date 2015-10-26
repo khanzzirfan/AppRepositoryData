@@ -72,3 +72,7 @@ C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\bin\System.Web.Ht
 C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Release\TheResturantApp.Migrations.user_model.resources
 C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Release\TheResturantApp.Migrations.addentityOrderMenuCOlumns.resources
 C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Release\TheResturantApp.Migrations.removedforiegnCustomerReference.resources
+C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Release\TheResturantApp.Migrations.removeforiegnkeyreference.resources
+C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Release\TheResturantApp.Migrations.OrderTransactions.resources
+C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Release\TheResturantApp.Migrations.restoBuilds.resources
+C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Release\TheResturantApp.Migrations.addCOlumn.resources

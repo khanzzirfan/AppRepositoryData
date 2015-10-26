@@ -29,7 +29,7 @@ namespace TheResturantApp.Models.Mapping
             this.Property(t => t.Date).HasColumnName("start_date");
             this.Property(t => t.Time).HasColumnName("start_time");
             this.Property(t => t.TableID).HasColumnName("table_id");
-
+            this.Property(t => t.CustomerId).HasColumnName("customer_uid");
 
             //Audit Fields always
             this.Property(t => t.Active).HasColumnName("active");

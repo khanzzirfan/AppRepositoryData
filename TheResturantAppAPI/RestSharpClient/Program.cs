@@ -7,15 +7,17 @@ using RestSharp;
 using Newtonsoft.Json;
 using TheResturantApp.Models.DTO;
 using System.IO;
+using TheResturantApp.Models;
+using System.Net;
 
 namespace RestSharpClient
 {
    public  class Program
     {
 
-        public void GetReservations()
+        #region GetToken
+        public string GetToken()
         {
-            string phone = "0220778677";
             const string BaseAddress = "http://khanzzirfan.com/WApp/";
             var client = new RestClient(BaseAddress);
             string accessToken = "";
@@ -41,9 +43,55 @@ namespace RestSharpClient
             else
             {
                 Console.WriteLine("Connection Failed");
-                return;
+                return null;
             }
 
+            return accessToken;
+        }
+        #endregion  
+
+        #region BuildInfo
+        public void BuildInfo()
+        {
+            const string BaseAddress = "http://khanzzirfan.com/WApp/";
+            var client = new RestClient(BaseAddress);
+            string phone = "0220778677";
+            var accessToken = GetToken();
+
+            var request = new RestRequest(String.Format("api/RestoBuilds"));
+            request.AddParameter("Authorization", accessToken, ParameterType.HttpHeader);
+
+            // execute the request
+            var response2 = client.Execute(request);
+            var content = response2.Content; // raw content as string
+            var jobject = JsonConvert.DeserializeObject<List<RestoBuild>>(response2.Content);
+
+
+            //Call Using RestSharp Client;
+            client.ExecuteAsync<List<RestoBuild>>(request, (response) => {
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    var newbuild = response.Data;
+                    Console.WriteLine("Build Number {0}", newbuild);
+                }
+            });
+
+
+            var j = jobject;
+
+        }
+
+        #endregion
+
+
+        #region reservations
+
+        public void GetReservations()
+        {
+            const string BaseAddress = "http://khanzzirfan.com/WApp/";
+            var client = new RestClient(BaseAddress);
+            string phone = "0220778677";
+            var accessToken = GetToken();
             var request = new RestRequest(String.Format("api/Reservations?phone={0}", phone));
             request.AddParameter("Authorization", accessToken, ParameterType.HttpHeader);
 
@@ -66,7 +114,7 @@ namespace RestSharpClient
             });
 
         }
-
+        #endregion
         static void Main(string[] args)
         {
 
@@ -80,6 +128,9 @@ namespace RestSharpClient
             Console.WriteLine(string.Format("In {0}", currentDate.ToString("MMM")));
 
 
+            p.BuildInfo();
+
+            Console.ReadLine();
 
             /***
             const string BaseAddress = "http://khanzzirfan.com/WApp/";

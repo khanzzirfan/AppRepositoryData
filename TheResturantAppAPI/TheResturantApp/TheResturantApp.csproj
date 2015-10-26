@@ -214,6 +214,7 @@
     <Compile Include="Controllers\MenusController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ReservationsController.cs" />
+    <Compile Include="Controllers\RestoBuildsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -266,6 +267,14 @@
     <Compile Include="Migrations\201510172305342_OrderTransactions.Designer.cs">
       <DependentUpon>201510172305342_OrderTransactions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510211011413_restoBuilds.cs" />
+    <Compile Include="Migrations\201510211011413_restoBuilds.Designer.cs">
+      <DependentUpon>201510211011413_restoBuilds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510240326149_addCOlumn.cs" />
+    <Compile Include="Migrations\201510240326149_addCOlumn.Designer.cs">
+      <DependentUpon>201510240326149_addCOlumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AuditFields.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -278,6 +287,7 @@
     <Compile Include="Models\Mapping\MenuTypeMap.cs" />
     <Compile Include="Models\Mapping\OrderMap.cs" />
     <Compile Include="Models\Mapping\ReservationMap.cs" />
+    <Compile Include="Models\Mapping\RestoBuildMap.cs" />
     <Compile Include="Models\Mapping\TransactionMap.cs" />
     <Compile Include="Models\Mapping\UserModelMap.cs" />
     <Compile Include="Models\Menu.cs" />
@@ -286,6 +296,7 @@
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\DTO\OrderDTO.cs" />
     <Compile Include="Models\Reservation.cs" />
+    <Compile Include="Models\RestoBuild.cs" />
     <Compile Include="Models\TheResturantAppContext.cs" />
     <Compile Include="Models\TRAContext.cs" />
     <Compile Include="Models\Transactions.cs" />
@@ -396,6 +407,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510172305342_OrderTransactions.resx">
       <DependentUpon>201510172305342_OrderTransactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510211011413_restoBuilds.resx">
+      <DependentUpon>201510211011413_restoBuilds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510240326149_addCOlumn.resx">
+      <DependentUpon>201510240326149_addCOlumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

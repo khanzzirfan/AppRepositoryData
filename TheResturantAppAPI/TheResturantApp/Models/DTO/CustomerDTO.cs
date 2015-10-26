@@ -20,7 +20,6 @@ namespace TheResturantApp.Models
         public DateTime InsertDatetime { get;set; }
         public string InsertProcess { get; set; }
         public string InsertUser { get; set; }
-
     }
-
+    
 }

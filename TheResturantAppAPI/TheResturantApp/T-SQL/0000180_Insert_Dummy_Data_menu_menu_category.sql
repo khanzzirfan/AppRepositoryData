@@ -63,45 +63,62 @@ SELECT 'Sea Food',
 		GetDate(),
 		Host_name(),
 		'IKProcess'
-
-
-INSERT INTO Menu 
-(		menu_name,	
-		menu_description,
-		menu_type_id,
-		menu_category_id,
-		menu_price,
-		active,
-		insert_datetime,
-		insert_user,
-		insert_process)
-SELECT  'Chicken Tikka',
-		'Chicken Tikka description',
-		 t.menu_type_id,
-		 mc.category_id,
-		 10.00,
-		 'Y',
-		 GetDate(),
-		 HOST_NAME(),
-		 'IKPROCESS'
- FROM   dbo.menu_type t 
- CROSS JOIN dbo.menu_category mc 
- WHERE t.name = 'Chicken'
-   AND mc.category_name = 'Mains'
 UNION ALL
-SELECT  'Sheek Kebab',
-		'Mutton Sheek Kebab description',
-		 t.menu_type_id,
-		 mc.category_id,
-		 10.00,
-		 'Y',
-		 GetDate(),
-		 HOST_NAME(),
-		 'IKPROCESS'
- FROM   dbo.menu_type t 
- CROSS JOIN dbo.menu_category mc 
- WHERE t.name = 'Lamb'
-   AND mc.category_name = 'Starter'
+SELECT 'Dessert',
+		'Y',
+		GetDate(),
+		Host_name(),
+		'IKProcess'
+UNION ALL
+SELECT 'Sides',
+		'Y',
+		GetDate(),
+		Host_name(),
+		'IKProcess'
+UNION ALL
+SELECT 'Starter',
+		'Y',
+		GetDate(),
+		Host_name(),
+		'IKProcess'
+
+--INSERT INTO Menu 
+--(		menu_name,	
+--		menu_description,
+--		menu_type_id,
+--		menu_category_id,
+--		menu_price,
+--		active,
+--		insert_datetime,
+--		insert_user,
+--		insert_process)
+--SELECT  'Chicken Tikka',
+--		'Chicken Tikka description',
+--		 t.menu_type_id,
+--		 mc.category_id,
+--		 10.00,
+--		 'Y',
+--		 GetDate(),
+--		 HOST_NAME(),
+--		 'IKPROCESS'
+-- FROM   dbo.menu_type t 
+-- CROSS JOIN dbo.menu_category mc 
+-- WHERE t.name = 'Chicken'
+--   AND mc.category_name = 'Mains'
+--UNION ALL
+--SELECT  'Sheek Kebab',
+--		'Mutton Sheek Kebab description',
+--		 t.menu_type_id,
+--		 mc.category_id,
+--		 10.00,
+--		 'Y',
+--		 GetDate(),
+--		 HOST_NAME(),
+--		 'IKPROCESS'
+-- FROM   dbo.menu_type t 
+-- CROSS JOIN dbo.menu_category mc 
+-- WHERE t.name = 'Lamb'
+--   AND mc.category_name = 'Starter'
 
 
 

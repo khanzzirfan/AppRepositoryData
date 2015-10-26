@@ -22,4 +22,13 @@ namespace CoreRepository
         public  decimal QuantityOrdered { get; set; }
 
     }
+
+	public class DisplayMenu: IBusinessEntity
+	{
+		[PrimaryKey, AutoIncrement]
+		public int ID { get; set; }
+		public string Name {get;set;}
+		public string ThumbUrl {get;set;}
+	}
+
 }

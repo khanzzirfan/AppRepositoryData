@@ -8,6 +8,7 @@ namespace TheResturantApp.Models.DTO
 {
     public class MenuDTO
     {
+        public int ID { get; set; }
         public decimal MenuID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -17,6 +18,8 @@ namespace TheResturantApp.Models.DTO
         public string ThumbUrl { get; set; }
         public string LargeUrl { get; set; }
         public string SmallUrl { get; set; }
+
+        public decimal QuantityOrdered { get; set; }
 
     }
 }

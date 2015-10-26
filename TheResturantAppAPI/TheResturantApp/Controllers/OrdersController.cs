@@ -77,7 +77,7 @@ namespace TheResturantApp.Controllers
                             MenuID = m.MenuID,
                             MenuName = m.MenuName,
                             Quantity = m.Quantity,
-                            UnitPrice = m.Quantity
+                            UnitPrice = m.UnitPrice,
 
                         }).ToList(),
                     }).ToList();

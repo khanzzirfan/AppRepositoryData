@@ -164,7 +164,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/12/2015 18:19:35</publishTime>
     </File>
     <File Include="bin/TheResturantApp.dll">
-      <publishTime>10/13/2015 00:03:18</publishTime>
+      <publishTime>10/24/2015 16:26:58</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>10/12/2015 18:19:35</publishTime>
@@ -257,7 +257,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/12/2015 18:19:37</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/13/2015 00:03:19</publishTime>
+      <publishTime>10/24/2015 14:18:32</publishTime>
     </File>
   </ItemGroup>
 </Project>

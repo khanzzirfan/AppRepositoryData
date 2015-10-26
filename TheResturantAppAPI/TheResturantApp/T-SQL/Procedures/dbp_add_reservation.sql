@@ -10,10 +10,13 @@ CREATE PROCEDURE dbp_add_reservation
 	@pv_comment		VARCHAR(500),
 	@pv_date		DATETIME,
 	@pv_time		VARCHAR(20),
+	@pv_cust_id		VARCHAR(100),
 	@pn_output_id		NUMERIC(18) OUTPUT
 	
 AS
 SET NOCOUNT ON;
+
+
 
 DECLARE @identity NUMERIC(18);
 INSERT INTO reservation
@@ -27,7 +30,8 @@ INSERT INTO reservation
 			active,
 			insert_datetime,
 			insert_process,
-			insert_user)
+			insert_user,
+			customer_uid)
 SELECT		@pv_name,
 			@pn_guest,
 			@pv_email,
@@ -38,7 +42,8 @@ SELECT		@pv_name,
 			'Y',
 			GETDATE(),
 			'WebApp',
-			HOST_NAME()
+			HOST_NAME(),
+			CONVERT(UniqueIdentifier,@pv_cust_id)
 
 SELECT @pn_output_id = SCOPE_IDENTITY();
 

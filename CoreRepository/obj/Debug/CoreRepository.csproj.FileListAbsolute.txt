@@ -5,12 +5,12 @@ C:\Users\DELL\Documents\Projects\CoreRepository\obj\Debug\CoreRepository.pdb
 C:\Users\DELL\Documents\Projects\CoreRepository\obj\Debug\CoreRepository.csprojResolveAssemblyReference.cache
 C:\Github\AppRepositoryData\CoreRepository\bin\Debug\CoreRepository.dll
 C:\Github\AppRepositoryData\CoreRepository\bin\Debug\CoreRepository.pdb
-C:\Github\AppRepositoryData\CoreRepository\obj\Debug\CoreRepository.dll
-C:\Github\AppRepositoryData\CoreRepository\obj\Debug\CoreRepository.pdb
 C:\Github\AppRepositoryData\CoreRepository\bin\Debug\Connectivity.Plugin.Abstractions.dll
 C:\Github\AppRepositoryData\CoreRepository\bin\Debug\Connectivity.Plugin.dll
 C:\Github\AppRepositoryData\CoreRepository\bin\Debug\Connectivity.Plugin.pdb
 C:\Github\AppRepositoryData\CoreRepository\bin\Debug\Connectivity.Plugin.xml
 C:\Github\AppRepositoryData\CoreRepository\bin\Debug\Connectivity.Plugin.Abstractions.pdb
 C:\Github\AppRepositoryData\CoreRepository\bin\Debug\Connectivity.Plugin.Abstractions.xml
+C:\Github\AppRepositoryData\CoreRepository\obj\Debug\CoreRepository.dll
+C:\Github\AppRepositoryData\CoreRepository\obj\Debug\CoreRepository.pdb
 C:\Github\AppRepositoryData\CoreRepository\obj\Debug\CoreRepository.csprojResolveAssemblyReference.cache

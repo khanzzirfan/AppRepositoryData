@@ -36,7 +36,9 @@ namespace TheResturantApp.Models
         public string Time { get; set; }
         
         [Column]
-        public decimal TableID { get; set; } 
+        public decimal TableID { get; set; }
 
+        [Column]
+        public Nullable<Guid> CustomerId { get; set; }
     }
 }

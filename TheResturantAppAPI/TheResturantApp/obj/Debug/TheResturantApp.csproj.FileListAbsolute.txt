@@ -145,7 +145,6 @@ C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\bin\System.Web.We
 C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\bin\System.Web.WebPages.Razor.xml
 C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\bin\Antlr3.Runtime.pdb
 C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheResturantApp.csproj.App.config
-C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheResturantApp.csprojResolveAssemblyReference.cache
 C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheResturantApp.Migrations.CustomerTableMapping.resources
 C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheResturantApp.Migrations.AddMenuTabless.resources
 C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheResturantApp.Migrations.AddCategorytables.resources
@@ -159,3 +158,8 @@ C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheRest
 C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheResturantApp.pdb
 C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheResturantApp.Migrations.addentityOrderMenuCOlumns.resources
 C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheResturantApp.Migrations.removedforiegnCustomerReference.resources
+C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheResturantApp.Migrations.removeforiegnkeyreference.resources
+C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheResturantApp.Migrations.OrderTransactions.resources
+C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheResturantApp.csprojResolveAssemblyReference.cache
+C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheResturantApp.Migrations.restoBuilds.resources
+C:\Github\AppRepositoryData\TheResturantAppAPI\TheResturantApp\obj\Debug\TheResturantApp.Migrations.addCOlumn.resources

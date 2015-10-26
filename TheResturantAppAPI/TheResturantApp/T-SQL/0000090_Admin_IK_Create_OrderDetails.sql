@@ -4,7 +4,7 @@
 -- 2.  Define the column names and additional columns
 -- 3.  Save as new file according to Agility Convention E.g. 00010_AGL-101_RC_TABLE_utl_temp_table.sql
 ---------------------------------------------------------------------------------------------------------------
-
+--- DROP TABLE order_transaction
 -- The following applies if you want to create a table from scratch
 IF NOT EXISTS(SELECT *
                 FROM sys.objects
@@ -15,14 +15,14 @@ BEGIN
    CREATE TABLE dbo.[order_transaction]
    (      transaction_id       NUMERIC(18)  IDENTITY PRIMARY KEY CLUSTERED,
           order_id			   NUMERIC(18),
-		  order_menu_id		   NUMERIC(18),
+		  menu_id			   NUMERIC(18),
 		  unit_price    	   NUMERIC(18),
 		  quantity			   NUMERIC(18,6),
 		  discount			   NUMERIC(18,6),
-		  order_amount		   MONEY,
+		  amount			   MONEY,
 		  
 		  price_plan_id		  NUMERIC(18),
-		  Comments			  VARCHAR(5000) COLLATE DATABASE_DEFAULT NULL,
+		  Comments			  VARCHAR(500) COLLATE DATABASE_DEFAULT NULL,
 		  active              VARCHAR(1)   COLLATE DATABASE_DEFAULT NOT NULL,
           insert_datetime     DATETIME     NOT NULL,
           insert_user         VARCHAR(20)  COLLATE DATABASE_DEFAULT NOT NULL,

@@ -42,9 +42,9 @@ namespace TheResturantApp.Controllers
         //GET: api/getreservationbyphone
         [Authorize]
         [Route("api/getreservationbyphone")]
-        public async Task<IEnumerable<ReservationDTO>> GetReservations(string phone)
+        public async Task<IEnumerable<ReservationDTO>> GetReservations(string uniqueId)
         {
-            var list = await GetReservationList(phone, 5);
+            var list = await GetReservationList(uniqueId, 5);
             return list;
         }
 
@@ -186,6 +186,7 @@ namespace TheResturantApp.Controllers
             var paramComment = new SqlParameter("@pv_comment", res.Comment);
             var paramDate = new SqlParameter("@pv_date", res.Date);
             var paramTime = new SqlParameter("@pv_time", res.Time);
+            var param_custId = new SqlParameter("@pv_cust_id", res.CustomerId);
 
             var id = new SqlParameter();
             id.ParameterName = "@pn_output_id";
@@ -194,10 +195,10 @@ namespace TheResturantApp.Controllers
 
             try
             {
-                await db.Database.ExecuteSqlCommandAsync("Exec dbp_add_reservation  @pv_name, @pn_guest, @pv_email,@pv_phone, @pv_comment,@pv_date,@pv_time, @pn_output_id OUTPUT",
+                await db.Database.ExecuteSqlCommandAsync("Exec dbp_add_reservation  @pv_name, @pn_guest, @pv_email,@pv_phone, @pv_comment,@pv_date,@pv_time, @pv_cust_id, @pn_output_id OUTPUT",
                 paramName, paramGuest, paramEmail,
                 paramPhone, paramComment,
-                paramDate, paramTime, id).ContinueWith((result) =>
+                paramDate, paramTime, param_custId, id).ContinueWith((result) =>
                 {
 
                     var spResult = result.Result;
@@ -265,10 +266,11 @@ namespace TheResturantApp.Controllers
         }
 
         #region HelperMethods
-        private async Task<IEnumerable<ReservationDTO>> GetReservationList(string phone, int noOfRows = 5)
+        private async Task<IEnumerable<ReservationDTO>> GetReservationList(string uniqueId, int noOfRows = 5)
         {
+            var cust_uid = new Guid(uniqueId);
             var reservation = await db.Reservations
-                .Where(c => c.Phone == phone)
+                .Where(c => c.CustomerId==cust_uid)
                 .OrderByDescending(c => c.Date)
                 .Select(c => new ReservationDTO()
                 {

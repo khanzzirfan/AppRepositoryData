@@ -110,6 +110,34 @@ namespace TheResturantApp.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        [Authorize]
+        [ResponseType(typeof(void))]
+        public async Task<IHttpActionResult> addCustomer(string uniqueNumber)
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["TRAContext"].ConnectionString;
+            using (var connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    if (!string.IsNullOrEmpty(uniqueNumber))
+                    {
+                        connection.Open();
+                        var cmd = new SqlCommand("dbp_resto_add_customer", connection);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@pv_number", uniqueNumber));
+                        var run = cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new ApplicationException(ex.Message);
+                }
+            }
+            return StatusCode(HttpStatusCode.OK);
+        }
+
+          
+
         // POST: api/Customers
         [ResponseType(typeof(Customer))]
         public async Task<IHttpActionResult> PostCustomer(Customer customer)

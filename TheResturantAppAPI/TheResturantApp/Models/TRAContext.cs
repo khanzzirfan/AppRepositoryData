@@ -23,7 +23,7 @@ namespace TheResturantApp.Models
         public DbSet<Menu> Menus { get; set; }
         public DbSet<MenuType> MenuTypes { get; set; }
         public DbSet<Transactions> Transactions { get; set; }
-
+        public DbSet<RestoBuild> RestoBuilds { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -54,6 +54,9 @@ namespace TheResturantApp.Models
 
             modelBuilder.Configurations.Add(new UserModelMap());
             modelBuilder.Entity<UserModel>().ToTable("user_login");
+
+            modelBuilder.Configurations.Add(new RestoBuildMap());
+            modelBuilder.Entity<RestoBuild>().ToTable("resto_build");
             
         }
 
