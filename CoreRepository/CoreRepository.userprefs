@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="CoreRepository.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TaskDatabase.cs">
+    <Files>
+      <File FileName="TaskDatabase.cs" Line="102" Column="3" />
+      <File FileName="AppRepository.cs" Line="43" Column="4" />
+      <File FileName="SampleSeedDB.cs" Line="10" Column="6" />
+      <File FileName="IRepository.cs" Line="3" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

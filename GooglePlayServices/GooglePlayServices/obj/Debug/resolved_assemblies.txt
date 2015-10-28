@@ -1,0 +1,13 @@
+C:\Codec\android\mono-samples\a\GooglePlayServices\GooglePlayServices\obj\Debug\assemblies\GooglePlayServicesTest.dll
+C:\Codec\android\mono-samples\a\GooglePlayServices\GooglePlayServices\obj\Debug\assemblies\Mono.Android.dll
+C:\Codec\android\mono-samples\a\GooglePlayServices\GooglePlayServices\obj\Debug\assemblies\Mono.Android.Export.dll
+C:\Codec\android\mono-samples\a\GooglePlayServices\GooglePlayServices\obj\Debug\assemblies\mscorlib.dll
+C:\Codec\android\mono-samples\a\GooglePlayServices\GooglePlayServices\obj\Debug\assemblies\RestSharp.dll
+C:\Codec\android\mono-samples\a\GooglePlayServices\GooglePlayServices\obj\Debug\assemblies\System.Core.dll
+C:\Codec\android\mono-samples\a\GooglePlayServices\GooglePlayServices\obj\Debug\assemblies\System.dll
+C:\Codec\android\mono-samples\a\GooglePlayServices\GooglePlayServices\obj\Debug\assemblies\System.Xml.dll
+C:\Codec\android\mono-samples\a\GooglePlayServices\GooglePlayServices\obj\Debug\assemblies\Xamarin.Android.Support.v4.dll
+C:\Codec\android\mono-samples\a\GooglePlayServices\GooglePlayServices\obj\Debug\assemblies\Xamarin.GooglePlayServices.Base.dll
+C:\Codec\android\mono-samples\a\GooglePlayServices\GooglePlayServices\obj\Debug\assemblies\Xamarin.GooglePlayServices.Location.dll
+C:\Codec\android\mono-samples\a\GooglePlayServices\GooglePlayServices\obj\Debug\assemblies\Xamarin.GooglePlayServices.Maps.dll
+C:\Codec\android\mono-samples\a\GooglePlayServices\GooglePlayServices\obj\Debug\assemblies\System.Xml.Linq.dll
