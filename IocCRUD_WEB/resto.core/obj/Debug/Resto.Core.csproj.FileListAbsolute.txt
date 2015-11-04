@@ -1,0 +1,5 @@
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Core\bin\Debug\Resto.Core.dll
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Core\bin\Debug\Resto.Core.pdb
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Core\obj\Debug\Resto.Core.csprojResolveAssemblyReference.cache
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Core\obj\Debug\Resto.Core.dll
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Core\obj\Debug\Resto.Core.pdb

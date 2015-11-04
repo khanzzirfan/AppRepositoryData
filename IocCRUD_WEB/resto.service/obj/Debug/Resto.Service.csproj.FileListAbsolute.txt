@@ -1,0 +1,15 @@
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Service\obj\Debug\Resto.Service.csprojResolveAssemblyReference.cache
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Service\bin\Debug\Resto.Service.dll
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Service\bin\Debug\Resto.Service.pdb
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Service\bin\Debug\Resto.Core.dll
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Service\bin\Debug\Resto.Data.dll
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Service\bin\Debug\MongoDB.Driver.dll
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Service\bin\Debug\MongoDB.Bson.dll
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Service\bin\Debug\MongoDB.Driver.Core.dll
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Service\bin\Debug\Resto.Core.pdb
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Service\bin\Debug\Resto.Data.pdb
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Service\bin\Debug\MongoDB.Driver.xml
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Service\bin\Debug\MongoDB.Bson.xml
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Service\obj\Debug\Resto.Service.dll
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Service\obj\Debug\Resto.Service.pdb
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Service\bin\Debug\App.config

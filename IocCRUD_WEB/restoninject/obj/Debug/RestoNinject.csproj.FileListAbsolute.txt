@@ -1,0 +1,5 @@
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\RestoNinject\bin\Debug\RestoNinject.dll
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\RestoNinject\bin\Debug\RestoNinject.pdb
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\RestoNinject\obj\Debug\RestoNinject.csprojResolveAssemblyReference.cache
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\RestoNinject\obj\Debug\RestoNinject.dll
+c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\RestoNinject\obj\Debug\RestoNinject.pdb

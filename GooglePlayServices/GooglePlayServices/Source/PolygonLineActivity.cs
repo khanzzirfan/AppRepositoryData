@@ -93,10 +93,6 @@ namespace GooglePlayServicesTest
 				
 			Task.Run(() =>
 				{
-					//mapFragment = new MapFragment();
-					//mapFragment = (MapFragment)FragmentManager.FindFragmentById(Resource.Id.map);
-					//mMap = mapFragment.Map;
-					
 					//Get to the resturant location; dummy location for now;
 					_addressText.Text = "Still loading the map....";
 						GetLocation (_heather_lat, _heather_long);
@@ -117,7 +113,6 @@ namespace GooglePlayServicesTest
 		protected override void OnStop()
 		{
 			mMap = null;
-			//mapFragment = null;
 			base.OnStop();
 		}
 
@@ -354,15 +349,19 @@ namespace GooglePlayServicesTest
 			return pointsList;
 		}
 
+
+
 		public void HandleDirectionPointsResult(List<LatLng> directionPoints, LatLng startLocation, LatLng endLocation)
 		{
 			var line = new PolylineOptions();
 		    line.InvokeWidth(8);
 		    line.InvokeColor(global::Android.Graphics.Color.Blue);
-
+			int i = 0;
 		    foreach (var point in directionPoints)
 		    {
 		        line.Add(point);
+
+
 		    }
 
 		    if (mMap != null)
@@ -394,8 +393,30 @@ namespace GooglePlayServicesTest
 							.SetSnippet("Population: Unknown")
 							.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueRed)));
 					
-						mMap.AnimateCamera(cameraUpdate);
+						var img = BitmapDescriptorFactory.FromResource (Resource.Drawable.badge_victoria);
+						var groundOverlayOptions1 = new GroundOverlayOptions ()
+							.Position (startLocation, 1600, 1600)
+							.InvokeImage (img);
+						var mapOverlay1 = mMap.AddGroundOverlay(groundOverlayOptions1);
 
+
+						//Randomly adding Map OVerlays on the map.
+						foreach (var point in directionPoints)
+						{
+							i++;
+							if (i > 520) {
+								i = 0;
+
+								var image = BitmapDescriptorFactory.FromResource (Resource.Drawable.balloon_overlay_focused);
+								var groundOverlayOptions = new GroundOverlayOptions ()
+									.Position (point, 2000, 2000)
+									.InvokeImage (image);
+								var mapOverlay = mMap.AddGroundOverlay(groundOverlayOptions);
+								var checadd = mapOverlay;
+
+							}
+						}
+						mMap.AnimateCamera(cameraUpdate);
 						var drawline = mMap.AddPolyline(line);    
                 });
 		        
