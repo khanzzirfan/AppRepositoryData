@@ -298,7 +298,7 @@ namespace CoreRepository
 									   od.Price,
 										od.TotalAmount,
 										od.Id AS OrderDetailId,
-										 m.Id as MenuID
+										 m.MenuID as MenuID
 								  FROM Menu m
 								  JOIN OrderDetails od	 ON m.Id = od.MenuID ";
 			var dto = database.Query<OrderDetailDTO> (selectQuery);

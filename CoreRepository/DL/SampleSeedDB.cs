@@ -28,6 +28,14 @@ namespace CoreRepository
 		string gv_vege = "https://lh3.googleusercontent.com/-xaCacbUrAYA/VbvmwR3NZrI/AAAAAAAAAJ0/SQmh3Q3O1y0/gv_vegev1.jpg";
 		string gv_side_dish = "https://lh3.googleusercontent.com/-WREcIrGaBYw/VbvmwYA0Z8I/AAAAAAAAAM4/xDmlBcWbfK8/gv_sidedishesv1.jpg";
 
+		string k1_blackberry_triffle="https://lh3.googleusercontent.com/-oacb41rLdYk/Vjh5JclD8iI/AAAAAAAAAm8/23rJR29iAhM/blackberry_triffle.png";
+		string k1_brocolli="https://lh3.googleusercontent.com/-wPsWoqCDU64/Vjh5R1ZAZiI/AAAAAAAAAnQ/ey143HEViIA/brocolli.png";
+		string k1_lamb_shank="https://lh3.googleusercontent.com/-M4MJ7oJU3Ps/Vjh5YPg_fiI/AAAAAAAAAnk/ozof7dwhzd4/lamb_shank.png";
+		string k1_prawn="https://lh3.googleusercontent.com/-3qtDisGv9yg/Vjh5fshM07I/AAAAAAAAAn0/tDzAmWtmMQo/prawn.png";
+		string k1_scotch_eggs="https://lh3.googleusercontent.com/-ReWMuvGQyb0/Vjh5ocC_0CI/AAAAAAAAAoI/I5pJRUqPt90/scotch_eggs.png";
+		string k1_spring_rolls = "https://lh3.googleusercontent.com/-oSphV_HtmJg/Vjh50XCiEOI/AAAAAAAAAoc/DCYOoJfmpBg/spring_rolls.png";
+		string k1_italian_prawn = "https://lh3.googleusercontent.com/-4SA0Vqw0isU/VjiTsccK1eI/AAAAAAAAApQ/Udpzd-SJ_NU/italian_prawn.png";	
+
         public SampleSeedDB()
         {
             SeedDb();
@@ -65,12 +73,12 @@ namespace CoreRepository
 
 			DisplayMenuList.Add(new DisplayMenu()
 					{
-						Name = "Seafood",
-						ThumbUrl = c1_chicken_v1,
+						Name = "Sea Food",
+						ThumbUrl = k1_italian_prawn,
 					});
 			DisplayMenuList.Add(new DisplayMenu()
 					{
-						Name = "Desert",
+						Name = "Dessert",
 						ThumbUrl = d1_dessert_v1,
 					});
 
@@ -238,12 +246,12 @@ namespace CoreRepository
 
             MenuList.Add(new Menu()
             {
-                Name = "Seafood",
+                Name = "Sea Food",
                 Description = "",
                 MenuCategory = "Menu",
                 MenuType = "Mains",
                 Price = 15.00m,
-                ThumbUrl = c1_chicken_v1,
+				ThumbUrl = k1_italian_prawn,
             });
             MenuList.Add(new Menu()
             {
