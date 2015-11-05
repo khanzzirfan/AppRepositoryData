@@ -1,6 +1,4 @@
-﻿/***
-
-using System;
+﻿using System;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Linq;
@@ -8,8 +6,9 @@ using Resto.Core;
 
 namespace Resto.Data
 {
-    public class Repository<T> : IRepository<T> where T : BaseEntity
+    public class Repository<T>  //: IRepository<T> where T : BaseEntity
     {
+        /**
         private readonly IDbContext _context;
         private IDbSet<T> _entities;
 
@@ -122,6 +121,7 @@ namespace Resto.Data
                 return _entities;
             }
         }
+         * 
+         */
     }
 }
-****/

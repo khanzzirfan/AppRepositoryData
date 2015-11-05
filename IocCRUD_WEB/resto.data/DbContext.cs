@@ -9,18 +9,20 @@ using System.Configuration;
 
 namespace Resto.Data
 {
-    public class MongoDbContext<TEntity> : IRepository<TEntity> where TEntity : BaseEntity
+    public class MongoDbContext
     {
-        private IMongoDatabase database;
-        private IMongoCollection<TEntity> collection;
+        //private IMongoDatabase database;
+        //private IMongoCollection<TEntity> collection;
         //private IMongoClient client;
+
 
         public MongoDbContext()
         {
-            GetDatabase();
-            GetCollection();
+          //  GetDatabase();
+          //  GetCollection();
         }
 
+        /****
         public IQueryable<TEntity> Table
         {
             get
@@ -64,6 +66,8 @@ namespace Resto.Data
             return result.Status == System.Threading.Tasks.TaskStatus.Created;
         }
 
+      
+
 
         #region Private Helper Methods
         private void GetDatabase()
@@ -106,6 +110,7 @@ namespace Resto.Data
         }
 
         #endregion
-
+          
+        ********/
     }
 }
