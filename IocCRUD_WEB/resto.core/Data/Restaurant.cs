@@ -8,6 +8,7 @@ namespace Resto.Core.Data
 {
     public class Restaurant: BaseEntity
     {
+        public Guid _Id { get; set; }
         public Address address { get; set; }
         public string borough { get; set; }
         public string cuisine { get; set; }

@@ -16,10 +16,10 @@ namespace Resto.Client
         static void Main(string[] args)
         {
             var uploadManager = new UploadManager();
-            uploadManager.UploadRestaurantData();
+            //uploadManager.UploadRestaurantData();
 
 
-            /**
+            
             IKernel kernal = new StandardKernel();
             kernal.Load(Assembly.GetExecutingAssembly());
 
@@ -37,7 +37,7 @@ namespace Resto.Client
 
             var restoService = kernal.Get<RestaurantServiceBase>();
             restoService.GetItems();
-            ***/
+            
 
             Console.ReadLine();
 

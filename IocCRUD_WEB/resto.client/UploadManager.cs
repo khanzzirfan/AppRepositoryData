@@ -51,10 +51,11 @@ namespace Resto.Client
                         {
                             var context = BsonDeserializationContext.CreateRoot(jsonReader);
                             var document = collection.DocumentSerializer.Deserialize(context);
-                            await collection.InsertOneAsync(document);
+                            collection.InsertOneAsync(document);
                         }
                     }
                 }
+
                 Console.WriteLine("Successfully Uploaded Grades");
             }
             catch (Exception ex)

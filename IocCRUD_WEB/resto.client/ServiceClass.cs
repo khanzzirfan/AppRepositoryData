@@ -50,7 +50,7 @@ namespace Resto.Client
 
         public void GetItems()
         {
-            var items = service.GetItems().ToList();
+            var items = service.GetItems();
             foreach (var restaurant in items)
             {
                 Console.WriteLine("Name {0} ", restaurant.name);

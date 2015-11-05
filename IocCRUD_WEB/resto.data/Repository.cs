@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq;
+using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using Resto.Core;
+using Resto.Core.Data;
 
 namespace Resto.Data
 {
@@ -14,11 +16,20 @@ namespace Resto.Data
 
         public Repository()
         {
+
             GetDatabase();
+            SetBsonMapping();
             GetCollection();
         }
 
-
+        public void SetBsonMapping()
+        {
+            BsonClassMap.RegisterClassMap<Restaurant>(c =>
+            {
+                c.AutoMap();
+                c.MapIdMember(e => e._Id);
+            });
+        }
         public T GetById(object id)
         {
 
