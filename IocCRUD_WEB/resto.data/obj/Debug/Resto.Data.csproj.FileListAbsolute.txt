@@ -12,3 +12,17 @@ c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Data\bin\De
 c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Data\bin\Debug\MongoDB.Bson.xml
 c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Data\bin\Debug\MongoDB.Driver.xml
 c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Data\bin\Debug\App.config
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Data\obj\Debug\Resto.Data.csprojResolveAssemblyReference.cache
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Data\obj\Debug\Resto.Data.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Data\obj\Debug\Resto.Data.pdb
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Data\bin\Debug\App.config
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Data\bin\Debug\Resto.Data.dll.config
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Data\bin\Debug\Resto.Data.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Data\bin\Debug\Resto.Data.pdb
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Data\bin\Debug\MongoDB.Bson.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Data\bin\Debug\MongoDB.Driver.Core.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Data\bin\Debug\MongoDB.Driver.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Data\bin\Debug\Resto.Core.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Data\bin\Debug\Resto.Core.pdb
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Data\bin\Debug\MongoDB.Bson.xml
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Data\bin\Debug\MongoDB.Driver.xml

@@ -22,3 +22,27 @@ c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Client\bin\
 c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Client\bin\Debug\MongoDB.Driver.xml
 c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Client\bin\Debug\MongoDB.Bson.xml
 c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Client\bin\Debug\App.config
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\obj\Debug\Resto.Client.csprojResolveAssemblyReference.cache
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\obj\Debug\Resto.Client.exe
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\obj\Debug\Resto.Client.pdb
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\bin\Debug\App.config
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\bin\Debug\Resto.Client.exe.config
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\bin\Debug\Resto.Client.exe
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\bin\Debug\Resto.Client.pdb
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\bin\Debug\Autofac.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\bin\Debug\Ninject.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\bin\Debug\Resto.Core.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\bin\Debug\Resto.Data.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\bin\Debug\Resto.Service.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\bin\Debug\WebActivatorEx.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\bin\Debug\MongoDB.Driver.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\bin\Debug\MongoDB.Bson.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\bin\Debug\MongoDB.Driver.Core.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\bin\Debug\Resto.Core.pdb
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\bin\Debug\Resto.Data.pdb
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\bin\Debug\Resto.Service.pdb
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\bin\Debug\Autofac.xml
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\bin\Debug\Ninject.xml
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\bin\Debug\MongoDB.Driver.xml
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Client\bin\Debug\MongoDB.Bson.xml

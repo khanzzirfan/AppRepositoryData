@@ -12,50 +12,36 @@ namespace Resto.Client
 {
     public  class Program
     {
-        private IRestaurantService restoService;
-
-        public Program(IRestaurantService resService)
-        {
-            this.restoService = restoService;
-        }
-
-        public void outputRestaurant()
-        {
-            var r = restoService.GetItems().ToList();
-
-            Console.WriteLine("Executed Restaurant Services");
-        }
-
+       
         static void Main(string[] args)
         {
+            var uploadManager = new UploadManager();
+            uploadManager.UploadRestaurantData();
+
+
+            /**
             IKernel kernal = new StandardKernel();
             kernal.Load(Assembly.GetExecutingAssembly());
 
-            kernal.Bind(typeof(IRepository<>)).To(typeof(MongoDbContext<>));
+            kernal.Bind(typeof(IRepository<>)).To(typeof(Repository<>));
 
             kernal.Bind<IUserService>().To<UserService>();
             kernal.Bind<IRestaurantService>().To<RestaurantService>();
 
-            var restoService = kernal.Get<IRestaurantService>();
 
-            var prog = new Program(restoService);
-            prog.outputRestaurant();
 
-           // var instance = kernal.Get<sourav>();
-           // instance.Attack();
+            kernal.Bind<IService>().To<ServiceClass>();
+            var service = kernal.Get<ServiceBase>();
+            service.ImplementServiceMember();
+
+
+            var restoService = kernal.Get<RestaurantServiceBase>();
+            restoService.GetItems();
+            ***/
+
             Console.ReadLine();
 
         }
 
-        ///// <summary>
-        ///// Load your modules or register your services here!
-        ///// </summary>
-        ///// <param name="kernel">The kernel.</param>
-        //private static void RegisterServices(IKernel kernel)
-        //{
-        //    kernel.Bind<IDbContext>().To<IocDbContext>().InRequestScope();
-        //    kernel.Bind(typeof(IRepository<>)).To(typeof(Repository<>)).InRequestScope();
-        //    kernel.Bind<IUserService>().To<UserService>();
-        //}
     }
 }

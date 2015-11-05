@@ -13,3 +13,18 @@ c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Service\bin
 c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Service\obj\Debug\Resto.Service.dll
 c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Service\obj\Debug\Resto.Service.pdb
 c:\users\dell\documents\visual studio 2015\Projects\Resto.Core\Resto.Service\bin\Debug\App.config
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Service\obj\Debug\Resto.Service.csprojResolveAssemblyReference.cache
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Service\obj\Debug\Resto.Service.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Service\obj\Debug\Resto.Service.pdb
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Service\bin\Debug\App.config
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Service\bin\Debug\Resto.Service.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Service\bin\Debug\Resto.Service.pdb
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Service\bin\Debug\Resto.Core.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Service\bin\Debug\Resto.Data.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Service\bin\Debug\Resto.Core.pdb
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Service\bin\Debug\Resto.Data.pdb
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Service\bin\Debug\MongoDB.Driver.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Service\bin\Debug\MongoDB.Bson.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Service\bin\Debug\MongoDB.Driver.Core.dll
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Service\bin\Debug\MongoDB.Driver.xml
+C:\GitHub\AppRepositoryData\IocCRUD_WEB\Resto.Service\bin\Debug\MongoDB.Bson.xml

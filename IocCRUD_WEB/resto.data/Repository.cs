@@ -1,127 +1,112 @@
 ﻿using System;
-using System.Data.Entity;
-using System.Data.Entity.Validation;
 using System.Linq;
+using MongoDB.Driver;
 using Resto.Core;
 
 namespace Resto.Data
 {
-    public class Repository<T>  //: IRepository<T> where T : BaseEntity
+    public class Repository<T> : IRepository<T> where T : BaseEntity
     {
-        /**
-        private readonly IDbContext _context;
-        private IDbSet<T> _entities;
+        private IMongoDatabase database;
+        private IMongoCollection<T> collection;
+        private IMongoClient client;
+        //public object ConfigurationManager { get; private set; }
 
-        public Repository(IDbContext context)
+        public Repository()
         {
-            this._context = context;
+            GetDatabase();
+            GetCollection();
         }
+
 
         public T GetById(object id)
         {
-            return this.Entities.Find(id);
+
+            var filter = new FilterDefinitionBuilder<T>().Eq("_id", id);
+            var find = collection.Find(filter).FirstOrDefaultAsync();
+            var result = find.Result;
+            return result;
         }
 
-        public void Insert(T entity)
+        public bool Insert(T entity)
         {
-            try
-            {
-                if (entity == null)
-                {
-                    throw new ArgumentNullException("entity");
-                }
-                this.Entities.Add(entity);
-                this._context.SaveChanges();
-            }
-            catch (DbEntityValidationException dbEx)
-            {
-                var msg = string.Empty;
-
-                foreach (var validationErrors in dbEx.EntityValidationErrors)
-                {
-                    foreach (var validationError in validationErrors.ValidationErrors)
-                    {
-                        msg += string.Format("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage) + Environment.NewLine;
-                    }
-                }
-
-                var fail = new Exception(msg, dbEx);
-                throw fail;
-            }
+            entity.ID = Guid.NewGuid();
+            var result = collection.InsertOneAsync(entity);
+            return result.Status == System.Threading.Tasks.TaskStatus.RanToCompletion;
         }
 
-        public void Update(T entity)
+        public bool Update(T entity)
         {
-            try
-            {
-                if (entity == null)
-                {
-                    throw new ArgumentNullException("entity");
-                }
-                this._context.SaveChanges();
-            }
-            catch (DbEntityValidationException dbEx)
-            {
-                var msg = string.Empty;
-                foreach (var validationErrors in dbEx.EntityValidationErrors)
-                {
-                    foreach (var validationError in validationErrors.ValidationErrors)
-                    {
-                        msg += Environment.NewLine + string.Format("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
-                    }
-                }
-                var fail = new Exception(msg, dbEx);
-                throw fail;
-            }
+            if (entity.ID == null || entity.ID==Guid.Empty)
+                return Insert(entity);
+
+            //collection.UpdateOneAsync<TEntity>(x => x.ID == entity.ID, entity);
+            var result = collection.ReplaceOneAsync<T>(x => x.ID == entity.ID, entity);
+            return result.Status == System.Threading.Tasks.TaskStatus.Created;
         }
 
-        public void Delete(T entity)
+        public bool Delete(T entity)
         {
-            try
-            {
-                if (entity == null)
-                {
-                    throw new ArgumentNullException("entity");
-                }
-                this.Entities.Remove(entity);
-                this._context.SaveChanges();
-            }
-            catch (DbEntityValidationException dbEx)
-            {
-                var msg = string.Empty;
-
-                foreach (var validationErrors in dbEx.EntityValidationErrors)
-                {
-                    foreach (var validationError in validationErrors.ValidationErrors)
-                    {
-                        msg += Environment.NewLine + string.Format("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
-                    }
-                }
-                var fail = new Exception(msg, dbEx);
-                throw fail;
-            }
+            var filter = Builders<T>.Filter.Eq("_id", entity.ID);
+            var result = collection.DeleteOneAsync(filter);
+            var _status = result.Status;
+            return true;
         }
 
-        public virtual IQueryable<T> Table
+        public IQueryable<T> Table
         {
             get
             {
-                return this.Entities;
+                return collection.AsQueryable();
             }
         }
 
-        private IDbSet<T> Entities
+
+
+       #region Private Helper Methods
+        private void GetDatabase()
         {
-            get
-            {
-                if (_entities == null)
-                {
-                    _entities = _context.Set<T>();
-                }
-                return _entities;
-            }
+            var client = new MongoClient(GetConnectionString());
+            database = client.GetDatabase(GetDatabaseName());
         }
-         * 
-         */
+
+        private string GetConnectionString()
+        {
+
+            var config = System.Configuration.ConfigurationManager.AppSettings["MongoDbConnectionString"];
+            if (config == null)
+            {
+                const string connectionString = "mongodb://localhost/?replicaSet=myReplSet&readPreference=primary";
+                const string conn2 = "mongodb://localhost:27017/{DB_NAME}?safe=true";
+                config = connectionString;
+            }
+            var dbName = GetDatabaseName();
+            if (dbName == null)
+            {
+                dbName = "test";
+            }
+
+            return config.Replace("{DB_NAME}", dbName);
+
+            //return System.Configuration.ConfigurationManager.AppSettings["MongoDbConnectionString"].Replace("{DB_NAME}", GetDatabaseName());
+           //.Get("MongoDbConnectionString")
+               
+        }
+
+        private string GetDatabaseName()
+        {
+            return "test";
+            //return System.Configuration.ConfigurationManager.AppSettings.Get("MongoDbDatabaseName");
+        }
+
+        private void GetCollection()
+        {
+            collection = database
+                .GetCollection<T>(typeof(T).Name);
+        }
+
+        #endregion
+          
+
     }
 }
