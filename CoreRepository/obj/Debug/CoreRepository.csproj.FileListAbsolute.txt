@@ -13,4 +13,3 @@ C:\Github\AppRepositoryData\CoreRepository\bin\Debug\Connectivity.Plugin.Abstrac
 C:\Github\AppRepositoryData\CoreRepository\bin\Debug\Connectivity.Plugin.Abstractions.xml
 C:\Github\AppRepositoryData\CoreRepository\obj\Debug\CoreRepository.dll
 C:\Github\AppRepositoryData\CoreRepository\obj\Debug\CoreRepository.pdb
-C:\Github\AppRepositoryData\CoreRepository\obj\Debug\CoreRepository.csprojResolveAssemblyReference.cache

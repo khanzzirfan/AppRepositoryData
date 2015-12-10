@@ -1,0 +1,10 @@
+C:\Github\AppRepositoryData\CoreRepository\bin\Release\CoreRepository.dll
+C:\Github\AppRepositoryData\CoreRepository\bin\Release\CoreRepository.pdb
+C:\Github\AppRepositoryData\CoreRepository\bin\Release\Connectivity.Plugin.Abstractions.dll
+C:\Github\AppRepositoryData\CoreRepository\bin\Release\Connectivity.Plugin.dll
+C:\Github\AppRepositoryData\CoreRepository\bin\Release\Connectivity.Plugin.pdb
+C:\Github\AppRepositoryData\CoreRepository\bin\Release\Connectivity.Plugin.xml
+C:\Github\AppRepositoryData\CoreRepository\bin\Release\Connectivity.Plugin.Abstractions.pdb
+C:\Github\AppRepositoryData\CoreRepository\bin\Release\Connectivity.Plugin.Abstractions.xml
+C:\Github\AppRepositoryData\CoreRepository\obj\Release\CoreRepository.dll
+C:\Github\AppRepositoryData\CoreRepository\obj\Release\CoreRepository.pdb

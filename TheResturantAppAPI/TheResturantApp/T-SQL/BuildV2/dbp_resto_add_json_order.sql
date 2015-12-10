@@ -9,6 +9,15 @@ CREATE PROCEDURE dbp_resto_add_json_order
 AS 
 SET NOCOUNT ON;
 
+/** Log Debug **/
+INSERT INTO debug_log
+(			debug_time,
+			log_message)
+SELECT GETDATE(),
+	   CONVERT(VARCHAR(MAX),@pv_json_order)
+/** END OF LOG ******/
+
+
 DECLARE @order			TABLE
 (		customer_id		NUMERIC(18),
 		name			VARCHAR(100),
@@ -114,7 +123,7 @@ SELECT 1
   WHERE m.menu_id IS NULL
 )
 BEGIN
-Raiserror('Invalida Menu ID entered.',16,1)
+Raiserror('Invalid Menu ID entered.',16,1)
  return;
 END
 
@@ -177,8 +186,8 @@ SELECT @jsonString  = '{
   "orderId": 1.0,
   "customerId": "F40700B1-795C-46B0-A657-16BFA8574666",
   "name": "procTest_order",
-  "dateOrdered": "2015-10-25T11:49:47.103262+13:00",
-  "dateRequired": "2015-10-25T11:49:47.103262+13:00",
+  "dateOrdered": "2015-11-25T11:49:47.103262+13:00",
+  "dateRequired": "2015-11-25T11:49:47.103262+13:00",
   "comments": "sample string 6",
   "orderItems": [
     {
@@ -190,10 +199,10 @@ SELECT @jsonString  = '{
       "orderAmount": 6.0,
       "id": 7.0,
       "active": "Y",
-      "insertDateTime": "2015-10-18T11:49:47.1062622+13:00",
+      "insertDateTime": "2015-11-18T11:49:47.1062622+13:00",
       "insertUser": "sample",
       "insertProcess": "sample",
-      "updateDateTime": "2015-10-18T11:49:47.1062622+13:00",
+      "updateDateTime": "2015-11-18T11:49:47.1062622+13:00",
       "updateUser": "sample",
       "updateProcess": "sample"
     }

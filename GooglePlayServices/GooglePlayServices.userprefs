@@ -7,7 +7,7 @@
       <File FileName="GooglePlayServices\Properties\AndroidManifest.xml" Line="1" Column="1" />
       <File FileName="GooglePlayServices\Source\PolygonLineActivity.cs" Line="401" Column="7" />
       <File FileName="GooglePlayServices\GMapClass.cs" Line="1" Column="1" />
-      <File FileName="GooglePlayServices\Source\MarkerDemoActivity.cs" Line="343" Column="5" />
+      <File FileName="GooglePlayServices\Source\MarkerDemoActivity.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

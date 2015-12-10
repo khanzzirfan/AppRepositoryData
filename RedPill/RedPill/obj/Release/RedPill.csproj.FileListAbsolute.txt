@@ -1,0 +1,5 @@
+c:\users\dell\documents\visual studio 2015\Projects\RedPill\RedPill\bin\RedPill.dll.config
+c:\users\dell\documents\visual studio 2015\Projects\RedPill\RedPill\bin\RedPill.dll
+c:\users\dell\documents\visual studio 2015\Projects\RedPill\RedPill\bin\RedPill.pdb
+c:\users\dell\documents\visual studio 2015\Projects\RedPill\RedPill\obj\Release\RedPill.dll
+c:\users\dell\documents\visual studio 2015\Projects\RedPill\RedPill\obj\Release\RedPill.pdb
