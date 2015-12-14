@@ -1,0 +1,18 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="XamApp2.WinPhone" EntryPointType="XamApp2.WinPhone.App" RuntimeVersion="4.7.50308.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="XamApp2.WinPhone" Source="XamApp2.WinPhone.dll" />
+    <AssemblyPart x:Name="ExifLib" Source="ExifLib.dll" />
+    <AssemblyPart x:Name="Microsoft.Phone.Controls.Toolkit" Source="Microsoft.Phone.Controls.Toolkit.dll" />
+    <AssemblyPart x:Name="XamApp2" Source="XamApp2.dll" />
+    <AssemblyPart x:Name="Xamarin.Forms.Core" Source="Xamarin.Forms.Core.dll" />
+    <AssemblyPart x:Name="Xamarin.Forms.Platform" Source="Xamarin.Forms.Platform.dll" />
+    <AssemblyPart x:Name="Xamarin.Forms.Platform.WP8" Source="Xamarin.Forms.Platform.WP8.dll" />
+    <AssemblyPart x:Name="Xamarin.Forms.Xaml" Source="Xamarin.Forms.Xaml.dll" />
+    <AssemblyPart x:Name="XLabs.Core" Source="XLabs.Core.dll" />
+    <AssemblyPart x:Name="XLabs.Forms" Source="XLabs.Forms.dll" />
+    <AssemblyPart x:Name="XLabs.Ioc" Source="XLabs.Ioc.dll" />
+    <AssemblyPart x:Name="XLabs.Platform" Source="XLabs.Platform.dll" />
+    <AssemblyPart x:Name="XLabs.Serialization" Source="XLabs.Serialization.dll" />
+    <AssemblyPart x:Name="System.Windows.Interactivity" Source="System.Windows.Interactivity.dll" />
+  </Deployment.Parts>
+</Deployment>
