@@ -10,20 +10,20 @@ namespace RedPill
     public class Constants
     {
         // Ensures consistency in the namespace declarations across services
-        public const string Namespace = "http://khanzzirfan.com/Red/";
+        public const string Namespace = "http://KnockKnock.readify.net";
     }
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IRedPill" in both code and config file together.
-    [ServiceContract(Namespace =Constants.Namespace)]
+    [ServiceContract(Namespace =Constants.Namespace, Name = "IRedPill")]
     public interface IRedPill
     {
         [OperationContract]
-        System.Guid WhatIsYourToken();
+        Guid WhatIsYourToken();
 
         [OperationContract]
         string ReverseWords(string inputSentence);
 
         [OperationContract]
-        Int64 FibonacciNumber(Int64 number);
+        Int64 FibonacciNumber(Int64 n);
         
         [OperationContract]
         TriangleType WhatShapeIsThis(int a, int b, int c);

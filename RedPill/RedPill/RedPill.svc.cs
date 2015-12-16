@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RedPill.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -9,53 +10,52 @@ namespace RedPill
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "RedPill" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select RedPill.svc or RedPill.svc.cs at the Solution Explorer and start debugging.
-    [ServiceBehavior(Namespace =Constants.Namespace)]
+    [ServiceBehavior(Namespace =Constants.Namespace, IncludeExceptionDetailInFaults = true)]
     public class RedPill : IRedPill
     {
-        public long FibonacciNumber(long number)
-        {
-            Int64 a = 0;
-            Int64 b = 1;
+        // The Readify token associated with the khanzz_irfan@hotmail.com.
+        protected Guid token = new Guid("2ef05651-900d-4735-aaab-653e6937ab52");
 
-            for (Int64 i = 0; i < number; i++)
+        public long FibonacciNumber(long n)
+        {
+            long result = 0;
+
+            try
             {
-                Int64 temp = a;
-                a = b;
-                b = temp + b;
+                result = new FibonacciService().Calculate(n);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                // The ArgumentOutOfRangeException is expected, therefore re-throw it further.
+                throw;
+            }
+            catch (Exception exception)
+            {
+               
             }
 
-            return a;
-
+            return result;
+            
         }
 
-        public string ReverseWords(string inputSentence)
+        public string ReverseWords(string s)
         {
-            StringBuilder strb = new StringBuilder();
-            string revStr = "";
+            string result = string.Empty;
 
-            List<char> charlist = new List<char>();
-            for (int c = 0; c < inputSentence.Length; c++)
+            try
             {
-
-                if (inputSentence[c] == ' ' || c == inputSentence.Length - 1)
-                {
-                    if (c == inputSentence.Length - 1)
-                        charlist.Add(inputSentence[c]);
-                    for (int i = charlist.Count - 1; i >= 0; i--)
-                        strb.Append(charlist[i]);
-
-                    strb.Append(' ');
-                    charlist = new List<char>();
-                }
-                else
-                    charlist.Add(inputSentence[c]);
+                result = new ReverseWordService().ReverseWords(s);
+            }
+            catch (ArgumentNullException)
+            {
+                // The ArgumentNullException is expected, therefore re-throw it further.
+                throw;
+            }
+            catch (Exception exception)
+            {
             }
 
-            string output = strb.ToString();
-            revStr = output.ToString();
-
-            return revStr;
-
+            return result;
         }
 
         public Guid WhatIsYourToken()

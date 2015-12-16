@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -72,6 +73,8 @@
     <Compile Include="RedPill.svc.cs">
       <DependentUpon>RedPill.svc</DependentUpon>
     </Compile>
+    <Compile Include="Services\FibonacciService.cs" />
+    <Compile Include="Services\ReverseWordService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
