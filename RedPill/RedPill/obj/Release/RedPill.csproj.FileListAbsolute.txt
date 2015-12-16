@@ -3,3 +3,8 @@ c:\users\dell\documents\visual studio 2015\Projects\RedPill\RedPill\bin\RedPill.
 c:\users\dell\documents\visual studio 2015\Projects\RedPill\RedPill\bin\RedPill.pdb
 c:\users\dell\documents\visual studio 2015\Projects\RedPill\RedPill\obj\Release\RedPill.dll
 c:\users\dell\documents\visual studio 2015\Projects\RedPill\RedPill\obj\Release\RedPill.pdb
+C:\Github\AppRepositoryData\RedPill\RedPill\bin\RedPill.dll.config
+C:\Github\AppRepositoryData\RedPill\RedPill\bin\RedPill.dll
+C:\Github\AppRepositoryData\RedPill\RedPill\bin\RedPill.pdb
+C:\Github\AppRepositoryData\RedPill\RedPill\obj\Release\RedPill.dll
+C:\Github\AppRepositoryData\RedPill\RedPill\obj\Release\RedPill.pdb
