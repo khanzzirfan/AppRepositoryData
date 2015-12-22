@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Paths>
+  <Jars></Jars>
+  <ResolvedResourceDirectories>
+    <ResolvedResourceDirectory>C:\GitHub\AppRepositoryData\EmployeeV2\EmployeeV2\EmployeeV2.Droid\obj\Debug\__library_projects__\ImageCircle.Forms.Plugin.Android\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\GitHub\AppRepositoryData\EmployeeV2\EmployeeV2\EmployeeV2.Droid\obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\GitHub\AppRepositoryData\EmployeeV2\EmployeeV2\EmployeeV2.Droid\obj\Debug\__library_projects__\Xamarin.Forms.Platform\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\GitHub\AppRepositoryData\EmployeeV2\EmployeeV2\EmployeeV2.Droid\obj\Debug\__library_projects__\XLabs.Forms.Droid\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\GitHub\AppRepositoryData\EmployeeV2\EmployeeV2\EmployeeV2.Droid\obj\Debug\__library_projects__\XLabs.Platform.Droid\library_project_imports\res</ResolvedResourceDirectory>
+  </ResolvedResourceDirectories>
+  <ResolvedAssetDirectories>
+    <ResolvedAssetDirectory>C:\GitHub\AppRepositoryData\EmployeeV2\EmployeeV2\EmployeeV2.Droid\obj\Debug\__library_projects__\ImageCircle.Forms.Plugin.Android\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>C:\GitHub\AppRepositoryData\EmployeeV2\EmployeeV2\EmployeeV2.Droid\obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>C:\GitHub\AppRepositoryData\EmployeeV2\EmployeeV2\EmployeeV2.Droid\obj\Debug\__library_projects__\Xamarin.Forms.Platform\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>C:\GitHub\AppRepositoryData\EmployeeV2\EmployeeV2\EmployeeV2.Droid\obj\Debug\__library_projects__\XLabs.Forms.Droid\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>C:\GitHub\AppRepositoryData\EmployeeV2\EmployeeV2\EmployeeV2.Droid\obj\Debug\__library_projects__\XLabs.Platform.Droid\library_project_imports\assets</ResolvedAssetDirectory>
+  </ResolvedAssetDirectories>
+  <ResolvedEnvironmentFiles />
+  <ResolvedResourceDirectoryStamps>
+    <ResolvedResourceDirectoryStamp>C:\GitHub\AppRepositoryData\EmployeeV2\EmployeeV2\EmployeeV2.Droid\obj\Debug\__library_projects__\ImageCircle.Forms.Plugin.Android.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\GitHub\AppRepositoryData\EmployeeV2\EmployeeV2\EmployeeV2.Droid\obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\GitHub\AppRepositoryData\EmployeeV2\EmployeeV2\EmployeeV2.Droid\obj\Debug\__library_projects__\Xamarin.Forms.Platform.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\GitHub\AppRepositoryData\EmployeeV2\EmployeeV2\EmployeeV2.Droid\obj\Debug\__library_projects__\XLabs.Forms.Droid.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\GitHub\AppRepositoryData\EmployeeV2\EmployeeV2\EmployeeV2.Droid\obj\Debug\__library_projects__\XLabs.Platform.Droid.stamp</ResolvedResourceDirectoryStamp>
+  </ResolvedResourceDirectoryStamps>
+</Paths>
